@@ -55,8 +55,6 @@ public class Db_Helper extends SQLiteOpenHelper {
         db.execSQL(createTableSanPham);
     }
 
-
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS Admin");
