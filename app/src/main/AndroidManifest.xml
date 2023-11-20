@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn1_PH38422_PH36893_PH40749"
         tools:targetApi="31">
+<!--        <activity-->
+<!--&lt;!&ndash;            android:name=".activity_Home"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:exported="false" />&ndash;&gt;-->
         <activity
-            android:name=".activity_Home"
+            android:name=".Wellcome"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Wellcome"
+            android:name=".Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
