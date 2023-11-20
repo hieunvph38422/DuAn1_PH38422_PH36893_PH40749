@@ -23,7 +23,7 @@
             android:layout_height="50dp"
             android:id="@+id/tab_layout"
             android:background="@drawable/tab"
-            />
+            tools:ignore="MissingConstraints" />
         
     </androidx.constraintlayout.widget.ConstraintLayout>
 
