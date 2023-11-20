@@ -9,17 +9,57 @@ import androidx.annotation.Nullable;
 public class Db_Helper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ChickenCoffee.db";
     private static final int DATABASE_VERSION = 2;
+
     public Db_Helper(@Nullable Context context) {
-        super(context,DATABASE_NAME,null,DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-    ///
+    public void onCreate(SQLiteDatabase db) {
+        String createTableAdmin = "CREATE TABLE Admin (" +
+                "maAdmin TEXT PRIMARY KEY, " +
+                "tenDangNhap TEXT NOT NULL, " +
+                "matKhau TEXT NOT NULL," +
+                "role INTEGER NOT NULL)";
+        db.execSQL(createTableAdmin);
+
+        String insertDefaultAdmin = "INSERT INTO Admin (maAdmin, tenDangNhap, matKhau,role) VALUES "
+                + "('admin01', 'nguyentrongnam', 'admin1',0)," +
+                "('nhanvien01', 'nguyentrongnam', 'nhanvien1',1)";
+        db.execSQL(insertDefaultAdmin);
+
+        String createTableKhachHang = "CREATE TABLE KhachHang (" +
+                "maKH TEXT PRIMARY KEY, " +
+                "tenKH TEXT NOT NULL, " +
+                "soDT TEXT NOT NULL," +
+                "matKhau TEXT NOT NULL)";
+        db.execSQL(createTableKhachHang);
+
+        String insertDefaultKhachHang = "INSERT INTO KhachHang (maKH, tenKH,soDT, matKhau) VALUES "
+                + "('kh01', 'kieutanminh','012345679', '123')," +
+                "('kh02', 'nguyenvanhieu','012345769', '321')";
+        db.execSQL(insertDefaultKhachHang);
+
+        String createTableLoaiSanPham = "CREATE TABLE LoaiSanPham (" +
+                "maLoai INTEGER PRIMARY KEY, " +
+                "tenLoai TEXT NOT NULL)";
+        db.execSQL(createTableLoaiSanPham);
+
+        String createTableSanPham = "CREATE TABLE SanPham (" +
+                "maSP INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "soLuong INTEGER NOT NULL, " +
+                "tenSP TEXT NOT NULL, " +
+                "giaTien INTERGER NOT NULL, " +
+                "maLoai INTEGER NOT NULL, " +
+                "FOREIGN KEY(maLoai) REFERENCES LoaiSanPham(maLoai))";
+        db.execSQL(createTableSanPham);
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS Admin");
+        db.execSQL("DROP TABLE IF EXISTS KhachHang");
     }
 }
