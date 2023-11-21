@@ -28,6 +28,18 @@ public class Db_Helper extends SQLiteOpenHelper {
                 "('nhanvien01', 'nguyentrongnam', 'nhanvien1',1)";
         db.execSQL(insertDefaultAdmin);
 
+        String createTableNhanVien = "CREATE TABLE NhanVien (" +
+                "maNV INTEGER PRIMARY KEY, " +
+                "tenDangNhap TEXT NOT NULL, " +
+                "matKhau TEXT NOT NULL," +
+                "role INTEGER NOT NULL)";
+        db.execSQL(createTableNhanVien);
+
+        String insertDefaultNhanVien = "INSERT INTO NhanVien (maNV, tenDangNhap, matKhau,role) VALUES "
+                + "('admin01', 'nguyentrongnam', 'admin1',0)," +
+                "('nhanvien01', 'nguyentrongnam', 'nhanvien1',1)";
+        db.execSQL(insertDefaultNhanVien);
+
         String createTableKhachHang = "CREATE TABLE KhachHang (" +
                 "maKH INTEGER PRIMARY KEY, " +
                 "tenKH TEXT NOT NULL, " +
@@ -99,7 +111,7 @@ public class Db_Helper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS Admin");
+        db.execSQL("DROP TABLE IF EXISTS NhanVien");
         db.execSQL("DROP TABLE IF EXISTS KhachHang");
         db.execSQL("DROP TABLE IF EXISTS LoaiSanPham");
         db.execSQL("DROP TABLE IF EXISTS SanPham");
