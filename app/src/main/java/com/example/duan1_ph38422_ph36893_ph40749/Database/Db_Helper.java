@@ -17,7 +17,7 @@ public class Db_Helper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTableAdmin = "CREATE TABLE Admin (" +
-                "maAdmin TEXT PRIMARY KEY, " +
+                "maAdmin INTEGER PRIMARY KEY, " +
                 "tenDangNhap TEXT NOT NULL, " +
                 "matKhau TEXT NOT NULL," +
                 "role INTEGER NOT NULL)";
@@ -29,7 +29,7 @@ public class Db_Helper extends SQLiteOpenHelper {
         db.execSQL(insertDefaultAdmin);
 
         String createTableKhachHang = "CREATE TABLE KhachHang (" +
-                "maKH TEXT PRIMARY KEY, " +
+                "maKH INTEGER PRIMARY KEY, " +
                 "tenKH TEXT NOT NULL, " +
                 "soDT TEXT NOT NULL," +
                 "matKhau TEXT NOT NULL)";
@@ -41,7 +41,7 @@ public class Db_Helper extends SQLiteOpenHelper {
         db.execSQL(insertDefaultKhachHang);
 
         String createTableLoaiSanPham = "CREATE TABLE LoaiSanPham (" +
-                "maLoai INTEGER PRIMARY KEY, " +
+                "maLoai INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "tenLoai TEXT NOT NULL)";
         db.execSQL(createTableLoaiSanPham);
 
@@ -53,11 +53,57 @@ public class Db_Helper extends SQLiteOpenHelper {
                 "maLoai INTEGER NOT NULL, " +
                 "FOREIGN KEY(maLoai) REFERENCES LoaiSanPham(maLoai))";
         db.execSQL(createTableSanPham);
+
+        String createTableDanhGia = "CREATE TABLE DanhGia (" +
+                "maDG INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nhanXet TEXT NOT NULL, " +
+                "ngayDG DATE NOT NULL, " +
+                "maSP INTEGER NOT NULL, " +
+                "FOREIGN KEY(maSP) REFERENCES SanPham(maSP))";
+        db.execSQL(createTableDanhGia);
+
+        String createTableGioHang = "CREATE TABLE GioHang (" +
+                "maGH INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "tenSP TEXT NOT NULL, " +
+                "giaTien INTERGER NOT NULL, " +
+                "maSP INTEGER NOT NULL, " +
+                "maHD INTEGER NOT NULL, " +
+                "FOREIGN KEY(maHD) REFERENCES HoaDon(maHD)," +
+                "FOREIGN KEY(maSP) REFERENCES SanPham(maSP))";
+        db.execSQL(createTableGioHang);
+
+        String createTableHoaDon = "CREATE TABLE HoaDon (" +
+                "maHD INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "ngayDat DATE NOT NULL, " +
+                "tongTien INTEGER NOT NULL, " +
+                "soDT INTERGER NOT NULL, " +
+                "diaChi TEXT NOT NULL, " +
+                "maKH INTEGER NOT NULL, " +
+                "FOREIGN KEY(maKH) REFERENCES KhachHang(maKH))";
+        db.execSQL(createTableHoaDon);
+
+        String createTableChiTietHoaDon = "CREATE TABLE HoaDon (" +
+                "maCTHD INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "maHD INTEGER NOT NULL, " +
+                "maSP INTEGER NOT NULL, " +
+                "maKH INTEGER NOT NULL, " +
+                "soLuong INTERGER NOT NULL, " +
+                "giaTien INTEGER NOT NULL, " +
+                "FOREIGN KEY(maHD) REFERENCES HoaDon(maHD)," +
+                "FOREIGN KEY(maSP) REFERENCES SanPham(maSP)," +
+                "FOREIGN KEY(maKH) REFERENCES KHACHHANG(maKH))";
+        db.execSQL(createTableChiTietHoaDon);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS Admin");
         db.execSQL("DROP TABLE IF EXISTS KhachHang");
+        db.execSQL("DROP TABLE IF EXISTS LoaiSanPham");
+        db.execSQL("DROP TABLE IF EXISTS SanPham");
+        db.execSQL("DROP TABLE IF EXISTS DanhGia");
+        db.execSQL("DROP TABLE IF EXISTS GioHang");
+        db.execSQL("DROP TABLE IF EXISTS HoaDon");
+        db.execSQL("DROP TABLE IF EXISTS ChiTietHoaDon");
     }
 }
