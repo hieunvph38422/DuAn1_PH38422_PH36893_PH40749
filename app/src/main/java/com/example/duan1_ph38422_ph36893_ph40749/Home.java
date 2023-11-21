@@ -7,20 +7,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.duan1_ph38422_ph36893_ph40749.Adapter.CategoryAdapter;
+import com.example.duan1_ph38422_ph36893_ph40749.Adapter.PopularAdapter;
 import com.example.duan1_ph38422_ph36893_ph40749.Domain.CategoryDomain;
+import com.example.duan1_ph38422_ph36893_ph40749.Domain.DrinkDomain;
 
 import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 
-    private RecyclerView.Adapter adapter;
-    private RecyclerView recyclerViewCategoryList;
+    private RecyclerView.Adapter adapter, adapter2;
+    private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         recyclerViewCategory();
+        recyclerViewPopular();
     }
     private void recyclerViewCategory() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
@@ -37,4 +40,19 @@ public class Home extends AppCompatActivity {
         recyclerViewCategoryList.setAdapter(adapter);
 
     }
+    private  void recyclerViewPopular(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recyclerViewPopularList = findViewById(R.id.recyclerView2);
+        recyclerViewPopularList.setLayoutManager(linearLayoutManager);
+
+        ArrayList<DrinkDomain> drinkList = new ArrayList<>();
+        drinkList.add(new DrinkDomain("hieu1","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.76));
+        drinkList.add(new DrinkDomain("hieu2","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.6));
+        drinkList.add(new DrinkDomain("hieu3","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.7));
+        drinkList.add(new DrinkDomain("hieu4","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.86));
+
+        adapter2 = new PopularAdapter(drinkList);
+        recyclerViewPopularList.setAdapter(adapter2);
+    }
+
 }
