@@ -1,5 +1,6 @@
 package com.example.duan1_ph38422_ph36893_ph40749.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.example.duan1_ph38422_ph36893_ph40749.Domain.CategoryDomain;
 import com.example.duan1_ph38422_ph36893_ph40749.Domain.DrinkDomain;
 import com.example.duan1_ph38422_ph36893_ph40749.R;
+import com.example.duan1_ph38422_ph36893_ph40749.ShowDetailActivity;
 
 import java.util.ArrayList;
 
@@ -42,6 +44,14 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
 
         Glide.with(holder.itemView.getContext()).load(drawableResourceID).into(holder.pic);
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+                intent.putExtra("object",drinkDomains.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
 
     }
 

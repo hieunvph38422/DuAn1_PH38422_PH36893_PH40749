@@ -1,6 +1,8 @@
 package com.example.duan1_ph38422_ph36893_ph40749.Domain;
 
-public class DrinkDomain {
+import java.io.Serializable;
+
+public class DrinkDomain implements Serializable {
     private String title;
     private String pic;
     private String description;

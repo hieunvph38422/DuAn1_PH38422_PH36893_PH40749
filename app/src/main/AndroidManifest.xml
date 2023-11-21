@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn1_PH38422_PH36893_PH40749"
         tools:targetApi="31">
-        <activity
-            android:name=".Activity.CartListActivity"
-            android:exported="false" />
-        <!-- <activity -->
-        <!-- &lt;!&ndash;            android:name=".activity_Home"&ndash;&gt; -->
-        <!-- &lt;!&ndash;            android:exported="false" />&ndash;&gt; -->
+<!--        <activity-->
+<!--&lt;!&ndash;            android:name=".activity_Home"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:exported="false" />&ndash;&gt;-->
         <activity
             android:name=".Wellcome"
+            android:exported="false" />
+        <activity
+            android:name=".ShowDetailActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

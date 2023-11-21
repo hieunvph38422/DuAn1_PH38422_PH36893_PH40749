@@ -31,7 +31,7 @@ public class CartListActivity extends AppCompatActivity {
         taxTxt=findViewById(R.id.taxTxt);
         deliveryTxt=findViewById(R.id.deliveryTxt);
         totalTxt=findViewById(R.id.totalTxt);
-        emptyTxt=findViewById(R.id.)
+//        emptyTxt=findViewById(R.id.)
 
     }
 }
