@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.duan1_ph38422_ph36893_ph40749.Adapter.CategoryAdapter;
 import com.example.duan1_ph38422_ph36893_ph40749.Domain.CategoryDomain;
 
 import java.util.ArrayList;
@@ -31,6 +32,9 @@ public class Home extends AppCompatActivity {
         category.add(new CategoryDomain("izzaa","cat_2"));
         category.add(new CategoryDomain("zzaaa","cat_3"));
         category.add(new CategoryDomain("zaaaa","cat_4"));
+
+        adapter= new CategoryAdapter(category);
+        recyclerViewCategoryList.setAdapter(adapter);
 
     }
 }
