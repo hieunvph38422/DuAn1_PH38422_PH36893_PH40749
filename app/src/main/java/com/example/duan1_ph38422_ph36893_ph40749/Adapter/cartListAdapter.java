@@ -47,7 +47,6 @@ public class cartListAdapter extends RecyclerView.Adapter<cartListAdapter.ViewHo
         TextView totialEachItem, num;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title=itemView.findViewById(R.id.)
         }
     }
 }
