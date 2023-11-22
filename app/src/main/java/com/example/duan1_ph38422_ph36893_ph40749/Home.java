@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
+import com.example.duan1_ph38422_ph36893_ph40749.Activity.CartListActivity;
 import com.example.duan1_ph38422_ph36893_ph40749.Adapter.CategoryAdapter;
 import com.example.duan1_ph38422_ph36893_ph40749.Adapter.PopularAdapter;
 import com.example.duan1_ph38422_ph36893_ph40749.Domain.CategoryDomain;
 import com.example.duan1_ph38422_ph36893_ph40749.Domain.DrinkDomain;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -24,6 +29,25 @@ public class Home extends AppCompatActivity {
 
         recyclerViewCategory();
         recyclerViewPopular();
+        bottomNavigation();
+    }
+
+    private void bottomNavigation(){
+        FloatingActionButton floatingActionButton = findViewById(R.id.cartBtn);
+        LinearLayout homeBtn = findViewById(R.id.homeBtn);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home.this, CartListActivity.class));
+            }
+        });
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home.this, Home.class));
+            }
+        });
     }
     private void recyclerViewCategory() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 import com.example.duan1_ph38422_ph36893_ph40749.Domain.DrinkDomain;
+import com.example.duan1_ph38422_ph36893_ph40749.Interface.ChangeNumberItemsListener;
 
 import java.util.ArrayList;
 
@@ -37,5 +38,29 @@ public class ManagenentCart {
     }
     public ArrayList<DrinkDomain> getListCart(){
         return tinyDB.getListObject("CartList");
+    }
+    public void plusNumberDrink(ArrayList<DrinkDomain> listDrink, int position, ChangeNumberItemsListener changeNumberItemsListener){
+        listDrink.get(position).setNumberInCart(listDrink.get(position).getNumberInCart() + 1);
+        tinyDB.putListObject("CartList", listDrink);
+        changeNumberItemsListener.change();
+    }
+
+    public void minusNumberDrink(ArrayList<DrinkDomain> listdrink, int position, ChangeNumberItemsListener changeNumberItemsListener){
+        if (listdrink.get(position).getNumberInCart()==1){
+            listdrink.remove(position);
+        } else {
+            listdrink.get(position).setNumberInCart(listdrink.get(position).getNumberInCart()-1);
+        }
+        tinyDB.putListObject("CartList",listdrink);
+        changeNumberItemsListener.change();
+    }
+
+    public Double getTotalFee(){
+        ArrayList<DrinkDomain> listDrink=getListCart();
+        double fee = 0;
+        for (int i = 0; i<listDrink.size(); i++){
+            fee = fee + (listDrink.get(i).getFee() * listDrink.get(i).getNumberInCart());
+        }
+        return fee;
     }
 }
