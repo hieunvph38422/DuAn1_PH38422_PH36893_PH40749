@@ -20,7 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/cocktail" />
 
     <TextView
         android:id="@+id/titleTxt"
@@ -37,13 +37,13 @@
 
     <ImageView
         android:id="@+id/minusCartBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginBottom="8dp"
         android:src="@tools:sample/avatars"
         app:layout_constraintBottom_toBottomOf="@+id/picCart"
         app:layout_constraintStart_toStartOf="@+id/titleTxt"
-        app:srcCompat="@drawable/search" />
+        app:srcCompat="@drawable/plus" />
 
     <TextView
         android:id="@+id/numberItemTxt"
@@ -57,14 +57,14 @@
 
     <ImageView
         android:id="@+id/plusCartBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="8dp"
         android:src="@tools:sample/avatars"
         app:layout_constraintBottom_toBottomOf="@+id/picCart"
         app:layout_constraintStart_toEndOf="@+id/numberItemTxt"
-        app:srcCompat="@drawable/search" />
+        app:srcCompat="@drawable/minus" />
 
     <TextView
         android:id="@+id/feeEachItem"
