@@ -1,6 +1,7 @@
 package com.example.duan1_ph38422_ph36893_ph40749.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -31,7 +32,13 @@ public class CartListActivity extends AppCompatActivity {
         taxTxt=findViewById(R.id.taxTxt);
         deliveryTxt=findViewById(R.id.deliveryTxt);
         totalTxt=findViewById(R.id.totalTxt);
-//        emptyTxt=findViewById(R.id.)
+        emptyTxt=findViewById(R.id.emptyTxt);
+        scrollView=findViewById(R.id.scrollView2);
+
+    }
+    private void initList(){
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recyclerViewList.setLayoutManager(linearLayoutManager);
 
     }
 }
