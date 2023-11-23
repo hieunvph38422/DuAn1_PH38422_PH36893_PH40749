@@ -55,10 +55,10 @@ public class Home extends AppCompatActivity {
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> category = new ArrayList<>();
-        category.add(new CategoryDomain("Pizza","cat_1"));
-        category.add(new CategoryDomain("izzaa","cat_2"));
-        category.add(new CategoryDomain("zzaaa","cat_3"));
-        category.add(new CategoryDomain("zaaaa","cat_4"));
+        category.add(new CategoryDomain("Latte","orange_juice"));
+        category.add(new CategoryDomain("Mocha","orange_juice"));
+        category.add(new CategoryDomain("Cherry","orange_juice"));
+        category.add(new CategoryDomain("Moka","orange_juice"));
 
         adapter= new CategoryAdapter(category);
         recyclerViewCategoryList.setAdapter(adapter);
@@ -70,10 +70,10 @@ public class Home extends AppCompatActivity {
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<DrinkDomain> drinkList = new ArrayList<>();
-        drinkList.add(new DrinkDomain("Minh","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.76));
-        drinkList.add(new DrinkDomain("hieu2","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.6));
-        drinkList.add(new DrinkDomain("hieu3","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.7));
-        drinkList.add(new DrinkDomain("hieu4","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.86));
+        drinkList.add(new DrinkDomain("Latte","cocktail","slies sgdsgdg, sdfsdgds, fsfgsd",25.000));
+        drinkList.add(new DrinkDomain("Mocha","cocktail","slies sgdsgdg, sdfsdgds, fsfgsd",30.000));
+        drinkList.add(new DrinkDomain("Cherry","cocktail","slies sgdsgdg, sdfsdgds, fsfgsd",35.000));
+        drinkList.add(new DrinkDomain("Moka","cocktail","slies sgdsgdg, sdfsdgds, fsfgsd",40.000));
 
         adapter2 = new PopularAdapter(drinkList);
         recyclerViewPopularList.setAdapter(adapter2);

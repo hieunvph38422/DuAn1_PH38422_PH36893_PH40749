@@ -39,22 +39,22 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         String picUrl = "";
         switch (position) {
             case 0:{
-                picUrl = "cat_1";
+                picUrl = "orange_juice";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background));
                 break;
             }
             case 1:{
-                picUrl = "cat_2";
+                picUrl = "orange_juice";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background1));
                 break;
             }
             case 2:{
-                picUrl = "cat_3";
+                picUrl = "orange_juice";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background2));
                 break;
             }
             case 3:{
-                picUrl = "cat_4";
+                picUrl = "orange_juice";
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background4));
                 break;
             }

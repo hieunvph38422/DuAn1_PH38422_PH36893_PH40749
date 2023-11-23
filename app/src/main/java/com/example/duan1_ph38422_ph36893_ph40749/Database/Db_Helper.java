@@ -19,25 +19,23 @@ public class Db_Helper extends SQLiteOpenHelper {
         String createTableAdmin = "CREATE TABLE Admin (" +
                 "maAdmin INTEGER PRIMARY KEY, " +
                 "tenDangNhap TEXT NOT NULL, " +
-                "matKhau TEXT NOT NULL," +
-                "role INTEGER NOT NULL)";
+                "matKhau TEXT NOT NULL)";
         db.execSQL(createTableAdmin);
 
-        String insertDefaultAdmin = "INSERT INTO Admin (maAdmin, tenDangNhap, matKhau,role) VALUES "
-                + "('admin01', 'nguyentrongnam', 'admin1',0)," +
-                "('nhanvien01', 'nguyentrongnam', 'nhanvien1',1)";
+        String insertDefaultAdmin = "INSERT INTO Admin (maAdmin, tenDangNhap, matKhau) VALUES "
+                + "('admin01', 'nguyentrongnam', 'admin1')," +
+                "('admin02', 'nguyenvanhieu', 'admin2')";
         db.execSQL(insertDefaultAdmin);
 
         String createTableNhanVien = "CREATE TABLE NhanVien (" +
                 "maNV INTEGER PRIMARY KEY, " +
                 "tenDangNhap TEXT NOT NULL, " +
-                "matKhau TEXT NOT NULL," +
-                "role INTEGER NOT NULL)";
+                "matKhau TEXT NOT NULL)";
         db.execSQL(createTableNhanVien);
 
-        String insertDefaultNhanVien = "INSERT INTO NhanVien (maNV, tenDangNhap, matKhau,role) VALUES "
-                + "('admin01', 'nguyentrongnam', 'admin1',0)," +
-                "('nhanvien01', 'nguyentrongnam', 'nhanvien1',1)";
+        String insertDefaultNhanVien = "INSERT INTO NhanVien (maNV, tenDangNhap, matKhau) VALUES "
+                + "('nhanvien01', 'nguyentrongnam', 'nhanvien1')," +
+                "('nhanvien02', 'nguyenvanhieu', 'nhanvien2')";
         db.execSQL(insertDefaultNhanVien);
 
         String createTableKhachHang = "CREATE TABLE KhachHang (" +
@@ -111,6 +109,7 @@ public class Db_Helper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS Admin");
         db.execSQL("DROP TABLE IF EXISTS NhanVien");
         db.execSQL("DROP TABLE IF EXISTS KhachHang");
         db.execSQL("DROP TABLE IF EXISTS LoaiSanPham");
