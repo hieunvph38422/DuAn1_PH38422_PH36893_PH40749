@@ -53,7 +53,7 @@
                     android:id="@+id/minusBtn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/cat_1"/>
+                    android:src="@drawable/minus"/>
 
                 <TextView
                     android:id="@+id/numberOrderTxt"
@@ -71,7 +71,7 @@
                     android:id="@+id/plusBtn"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/cat_1" />
+                    android:src="@drawable/plus" />
             </LinearLayout>
 
             <TextView

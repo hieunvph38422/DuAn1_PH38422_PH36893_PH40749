@@ -70,7 +70,7 @@ public class Home extends AppCompatActivity {
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<DrinkDomain> drinkList = new ArrayList<>();
-        drinkList.add(new DrinkDomain("hieu1","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.76));
+        drinkList.add(new DrinkDomain("Minh","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.76));
         drinkList.add(new DrinkDomain("hieu2","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.6));
         drinkList.add(new DrinkDomain("hieu3","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.7));
         drinkList.add(new DrinkDomain("hieu4","pizza","slies sgdsgdg, sdfsdgds, fsfgsd",9.86));
