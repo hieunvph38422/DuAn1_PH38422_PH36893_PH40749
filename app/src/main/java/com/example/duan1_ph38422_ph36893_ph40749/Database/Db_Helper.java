@@ -17,18 +17,18 @@ public class Db_Helper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTableAdmin = "CREATE TABLE Admin (" +
-                "maAdmin INTEGER PRIMARY KEY, " +
+                "maAdmin TEXT PRIMARY KEY, " +
                 "tenDangNhap TEXT NOT NULL, " +
                 "matKhau TEXT NOT NULL)";
         db.execSQL(createTableAdmin);
 
         String insertDefaultAdmin = "INSERT INTO Admin (maAdmin, tenDangNhap, matKhau) VALUES "
-                + "('admin01', 'nguyentrongnam', 'admin1')," +
-                "('admin02', 'nguyenvanhieu', 'admin2')";
+                + "('admin01', 'admin1', 'admin1')," +
+                "('admin02', 'admin2', 'admin2')";
         db.execSQL(insertDefaultAdmin);
 
         String createTableNhanVien = "CREATE TABLE NhanVien (" +
-                "maNV INTEGER PRIMARY KEY, " +
+                "maNV TEXT PRIMARY KEY, " +
                 "tenDangNhap TEXT NOT NULL, " +
                 "matKhau TEXT NOT NULL)";
         db.execSQL(createTableNhanVien);
@@ -46,8 +46,8 @@ public class Db_Helper extends SQLiteOpenHelper {
         db.execSQL(createTableKhachHang);
 
         String insertDefaultKhachHang = "INSERT INTO KhachHang (maKH, tenKH,soDT, matKhau) VALUES "
-                + "('kh01', 'kieutanminh','012345679', '123')," +
-                "('kh02', 'nguyenvanhieu','012345769', '321')";
+                + "(01, 'kieutanminh','012345679', '123')," +
+                "(02, 'nguyenvanhieu','012345769', '321')";
         db.execSQL(insertDefaultKhachHang);
 
         String createTableLoaiSanPham = "CREATE TABLE LoaiSanPham (" +
@@ -86,7 +86,7 @@ public class Db_Helper extends SQLiteOpenHelper {
                 "maHD INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "ngayDat DATE NOT NULL, " +
                 "tongTien INTEGER NOT NULL, " +
-                "soDT INTERGER NOT NULL, " +
+                "soDT INTEGER NOT NULL, " +
                 "diaChi TEXT NOT NULL, " +
                 "maKH INTEGER NOT NULL, " +
                 "FOREIGN KEY(maKH) REFERENCES KhachHang(maKH))";
@@ -97,13 +97,14 @@ public class Db_Helper extends SQLiteOpenHelper {
                 "maHD INTEGER NOT NULL, " +
                 "maSP INTEGER NOT NULL, " +
                 "maKH INTEGER NOT NULL, " +
-                "soLuong INTERGER NOT NULL, " +
+                "soLuong INTEGER NOT NULL, " +
                 "giaTien INTEGER NOT NULL, " +
                 "FOREIGN KEY(maHD) REFERENCES HoaDon(maHD)," +
                 "FOREIGN KEY(maSP) REFERENCES SanPham(maSP)," +
                 "FOREIGN KEY(maKH) REFERENCES KHACHHANG(maKH))";
         db.execSQL(createTableChiTietHoaDon);
     }
+
 
 
     @Override

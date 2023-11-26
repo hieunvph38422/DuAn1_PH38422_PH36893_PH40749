@@ -20,7 +20,7 @@ public class Wellcome extends AppCompatActivity {
                 }
                 finally
                 {
-                    Intent intent1 = new Intent(Wellcome.this, MainActivity.class);
+                    Intent intent1 = new Intent(Wellcome.this, LoginActivity.class);
                     startActivity(intent1);
                 }
             }
