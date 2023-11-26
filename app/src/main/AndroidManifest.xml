@@ -15,17 +15,12 @@
 <!--        <activity-->
 <!--&lt;!&ndash;            android:name=".activity_Home"&ndash;&gt;-->
 <!--&lt;!&ndash;            android:exported="false" />&ndash;&gt;-->
-        <activity
-            android:name=".Wellcome"
-            android:exported="false" />
-        <activity
-            android:name=".ShowDetailActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".Wellcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

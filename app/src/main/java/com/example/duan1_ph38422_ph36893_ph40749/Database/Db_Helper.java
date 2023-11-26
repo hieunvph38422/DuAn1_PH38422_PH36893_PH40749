@@ -92,7 +92,7 @@ public class Db_Helper extends SQLiteOpenHelper {
                 "FOREIGN KEY(maKH) REFERENCES KhachHang(maKH))";
         db.execSQL(createTableHoaDon);
 
-        String createTableChiTietHoaDon = "CREATE TABLE HoaDon (" +
+        String createTableChiTietHoaDon = "CREATE TABLE ChiTietHoaDon (" +
                 "maCTHD INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "maHD INTEGER NOT NULL, " +
                 "maSP INTEGER NOT NULL, " +
@@ -104,7 +104,6 @@ public class Db_Helper extends SQLiteOpenHelper {
                 "FOREIGN KEY(maKH) REFERENCES KHACHHANG(maKH))";
         db.execSQL(createTableChiTietHoaDon);
     }
-
 
 
     @Override
