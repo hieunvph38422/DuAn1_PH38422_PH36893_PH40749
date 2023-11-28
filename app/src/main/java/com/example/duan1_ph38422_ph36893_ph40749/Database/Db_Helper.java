@@ -54,7 +54,7 @@ public class Db_Helper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(tableUser);
 
-        String insert_user = "INSERT INTO User VALUES (1,'Poly Coffee','admin',1,'admin', 0332147469, 2003)";
+        String insert_user = "INSERT INTO User VALUES (1,'Chicken Coffee','admin',1,'admin', 0332147469, 2004)";
         db.execSQL(insert_user);
 
 // Bảng hóa đơn
