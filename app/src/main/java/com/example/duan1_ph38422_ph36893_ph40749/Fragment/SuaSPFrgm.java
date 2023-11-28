@@ -49,7 +49,7 @@ public class SuaSPFrgm extends Fragment {
     AutoCompleteTextView edtLoaiSP;
     SanPham sanPham;
     ImageView imgUpdate;
-    SanPhamDao sanPhamDao;
+    SanPhamDao daoSanPham;
     String strTenSP, strMota, strLoaiSP;
     double strGiaban;
     ArrayList<SanPham> arrayList;
@@ -64,6 +64,7 @@ public class SuaSPFrgm extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sua_s_p_frgm, container, false);
         // ánh xạ
         ImageView btnBackSuaSP = view.findViewById(R.id.btnBackSuaSP);
@@ -75,7 +76,7 @@ public class SuaSPFrgm extends Fragment {
         edUpdateMoTa = view.findViewById(R.id.update_moTa);
         edtLoaiSP = view.findViewById(R.id.edUpdateLSP);
         btnUpdate = view.findViewById(R.id.btnUpdateSp);
-        sanPhamDao = new SanPhamDao(getContext());
+        daoSanPham = new SanPhamDao(getContext());
         arrayList = new ArrayList<>();
         adapter = (Adapter) new AdapterSanPham(getActivity(), arrayList);
 
@@ -84,9 +85,9 @@ public class SuaSPFrgm extends Fragment {
         edUpdateTenSP.setText(sanPham.getTenSanPham());
         maLoai = sanPham.getMaLoai();
         String tenLoai = "";
-        ArrayList<TheLoai> listTL = sanPhamDao.getDSLSP();
+        ArrayList<TheLoai> listTL = daoSanPham.getDSLSP();
         for (int i = 0; i < listTL.size(); i++) {
-            if (listTL.get(i).getMaLoai() == maLoai) {
+            if (listTL.get(i).getMaLoai() == maLoai){
                 tenLoai = listTL.get(i).getTenLoai();
             }
         }
@@ -114,7 +115,7 @@ public class SuaSPFrgm extends Fragment {
         btnBackSuaSP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new ChiTietSP_frg(sanPham));
+                loadFragment(new SuaChiTietSP_frg(sanPham));
             }
         });
 
@@ -125,9 +126,9 @@ public class SuaSPFrgm extends Fragment {
                 edUpdateTenSP.setText(sanPham.getTenSanPham());
                 maLoai = sanPham.getMaLoai();
                 String tenLoai = "";
-                ArrayList<TheLoai> listTL = sanPhamDao.getDSLSP();
+                ArrayList<TheLoai> listTL = daoSanPham.getDSLSP();
                 for (int i = 0; i < listTL.size(); i++) {
-                    if (listTL.get(i).getMaLoai() == maLoai) {
+                    if (listTL.get(i).getMaLoai() == maLoai){
                         tenLoai = listTL.get(i).getTenLoai();
                     }
                 }
@@ -140,7 +141,7 @@ public class SuaSPFrgm extends Fragment {
             }
         });
 //        Set Data cho spnLoaiSP - AnhNQ
-        ArrayList<TheLoai> listTheLoai = sanPhamDao.getDSLSP();
+        ArrayList<TheLoai> listTheLoai = daoSanPham.getDSLSP();
         ArrayList<String> listTenTL = new ArrayList<>();
         ArrayList<Integer> listMaTL = new ArrayList<>();
         int listTheLoaiSize = listTheLoai.size();
@@ -171,14 +172,14 @@ public class SuaSPFrgm extends Fragment {
                 index = 0;
                 for (int i = 0; i < listTheLoaiSize; i++) {
                     String mTenLoai = listTenTL.get(i);
-                    if (mTenLoai.equals(strLoaiSP)) {
+                    if (mTenLoai.equals(strLoaiSP)){
                         index = i;
                         checkTL = true;
                         break;
                     }
                 }
 
-                if (checkTL) {
+                if (checkTL){
                     Dialog dialog = new Dialog(getActivity());
                     dialog.setContentView(R.layout.dialog_confirm);
                     dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
@@ -204,7 +205,7 @@ public class SuaSPFrgm extends Fragment {
                         public void onClick(View v) {
                             if (checkEdt()) {
                                 maLoai = listMaTL.get(index);
-                                sanPhamDao.updateSanPham(imageToByte(imgUpdate), strTenSP, strGiaban, maLoai, strMota, sanPham.getId());
+                                daoSanPham.updateSanPham(imageToByte(imgUpdate), strTenSP, strGiaban, maLoai, strMota, sanPham.getId());
                                 Toast.makeText(getActivity(), "Sửa thành công", Toast.LENGTH_SHORT).show();
                                 loadFragment(new Product_frg());
                                 resetEdt();
@@ -214,7 +215,7 @@ public class SuaSPFrgm extends Fragment {
                         }
                     });
                     dialog.show();
-                } else {
+                }   else {
                     edtLoaiSP.setError("Loại sản phẩm không tồn tại!");
                     edtLoaiSP.setText("");
                 }
@@ -222,7 +223,6 @@ public class SuaSPFrgm extends Fragment {
         });
         return view;
     }
-
     //Cấp quyền lấy ảnh
     private void LayAnh() {
         //cấp quyền từ người dùng
@@ -230,9 +230,9 @@ public class SuaSPFrgm extends Fragment {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 999);
             //cho phép sử dụng
         } else {
-            Intent intent = new Intent(Intent.ACTION_PICK_ACTIVITY);//truy cập vào bộ nhớ của máy
+            Intent intent = new Intent(Intent.ACTION_PICK);//truy cập vào bộ nhớ của máy
             intent.setType("image/*");
-            startActivityForResult(intent, 999);
+            startActivityForResult(intent, 888);
         }
     }
 
