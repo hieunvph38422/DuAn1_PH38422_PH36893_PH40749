@@ -16,107 +16,100 @@ public class Db_Helper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableAdmin = "CREATE TABLE Admin (" +
-                "maAdmin TEXT PRIMARY KEY, " +
-                "tenDangNhap TEXT NOT NULL, " +
-                "matKhau TEXT NOT NULL)";
-        db.execSQL(createTableAdmin);
+        String createTableTheLoai = "CREATE TABLE THELOAI(maLoai INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "tenLoai TEXT);";
+        db.execSQL(createTableTheLoai);
+        db.execSQL("INSERT INTO THELOAI VALUES(1, 'Cà Phê Truyền Thống'), (2, 'Cà Phê Máy'), (3, 'Trà Sữa'), (4, 'Bánh Ngọt');");
 
-        String insertDefaultAdmin = "INSERT INTO Admin (maAdmin, tenDangNhap, matKhau) VALUES "
-                + "('admin01', 'admin1', 'admin1')," +
-                "('admin02', 'admin2', 'admin2')";
-        db.execSQL(insertDefaultAdmin);
-
-        String createTableNhanVien = "CREATE TABLE NhanVien (" +
-                "maNV TEXT PRIMARY KEY, " +
-                "tenDangNhap TEXT NOT NULL, " +
-                "matKhau TEXT NOT NULL)";
-        db.execSQL(createTableNhanVien);
-
-        String insertDefaultNhanVien = "INSERT INTO NhanVien (maNV, tenDangNhap, matKhau) VALUES "
-                + "('nhanvien01', 'nguyentrongnam', 'nhanvien1')," +
-                "('nhanvien02', 'nguyenvanhieu', 'nhanvien2')";
-        db.execSQL(insertDefaultNhanVien);
-
-        String createTableKhachHang = "CREATE TABLE KhachHang (" +
-                "maKH INTEGER PRIMARY KEY, " +
-                "tenKH TEXT NOT NULL, " +
-                "soDT TEXT NOT NULL," +
-                "matKhau TEXT NOT NULL)";
-        db.execSQL(createTableKhachHang);
-
-        String insertDefaultKhachHang = "INSERT INTO KhachHang (maKH, tenKH,soDT, matKhau) VALUES "
-                + "(01, 'kieutanminh','012345679', '123')," +
-                "(02, 'nguyenvanhieu','012345769', '321')";
-        db.execSQL(insertDefaultKhachHang);
-
-        String createTableLoaiSanPham = "CREATE TABLE LoaiSanPham (" +
-                "maLoai INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "tenLoai TEXT NOT NULL)";
-        db.execSQL(createTableLoaiSanPham);
-
-        String createTableSanPham = "CREATE TABLE SanPham (" +
-                "maSP INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "soLuong INTEGER NOT NULL, " +
-                "tenSP TEXT NOT NULL, " +
-                "giaTien INTERGER NOT NULL, " +
-                "maLoai INTEGER NOT NULL, " +
-                "FOREIGN KEY(maLoai) REFERENCES LoaiSanPham(maLoai))";
+//Bảng sản phẩm
+        String createTableSanPham = ("CREATE TABLE SanPham(\n" +
+                "MaSanPham INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+                "image BLOG,\n" +
+                "TenSanPham TEXT,\n" +
+                "Price double,\n" +
+                "MaLoai INTEGER REFERENCES THELOAI(maLoai),\n" +
+                "MoTa TEXT\n" +
+                ");");
         db.execSQL(createTableSanPham);
 
-        String createTableDanhGia = "CREATE TABLE DanhGia (" +
-                "maDG INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "nhanXet TEXT NOT NULL, " +
-                "ngayDG DATE NOT NULL, " +
-                "maSP INTEGER NOT NULL, " +
-                "FOREIGN KEY(maSP) REFERENCES SanPham(maSP))";
-        db.execSQL(createTableDanhGia);
+// Bảng chức vụ
+        String createTableChucVu = "CREATE Table ChucVu(\n" +
+                "MaChucVu INTEGER PRIMARY KEY,\n" +
+                "TenChucVu TEXT\n" +
+                ");";
+        db.execSQL(createTableChucVu);
 
-        String createTableGioHang = "CREATE TABLE GioHang (" +
-                "maGH INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "tenSP TEXT NOT NULL, " +
-                "giaTien INTERGER NOT NULL, " +
-                "maSP INTEGER NOT NULL, " +
-                "maHD INTEGER NOT NULL, " +
-                "FOREIGN KEY(maHD) REFERENCES HoaDon(maHD)," +
-                "FOREIGN KEY(maSP) REFERENCES SanPham(maSP))";
-        db.execSQL(createTableGioHang);
+        String insert_chucvu = "INSERT INTO ChucVu VALUES (1,'Quản Lý'),(2,'Nhân Viên')";
+        db.execSQL(insert_chucvu);
 
-        String createTableHoaDon = "CREATE TABLE HoaDon (" +
-                "maHD INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "ngayDat DATE NOT NULL, " +
-                "tongTien INTEGER NOT NULL, " +
-                "soDT INTEGER NOT NULL, " +
-                "diaChi TEXT NOT NULL, " +
-                "maKH INTEGER NOT NULL, " +
-                "FOREIGN KEY(maKH) REFERENCES KhachHang(maKH))";
-        db.execSQL(createTableHoaDon);
+// Bảng User
+        String tableUser = "CREATE Table User (\n" +
+                "MaUser INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+                "FullName TEXT,\n" +
+                "Username TEXT,\n" +
+                "ChucVu INTEGER REFERENCES ChucVu(machucvu),\n" +
+                "Password TEXT,\n" +
+                "SDT TEXT,\n" +
+                "NamSinh INTEGER\n" +
+                ");";
+        db.execSQL(tableUser);
 
-        String createTableChiTietHoaDon = "CREATE TABLE ChiTietHoaDon (" +
-                "maCTHD INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "maHD INTEGER NOT NULL, " +
-                "maSP INTEGER NOT NULL, " +
-                "maKH INTEGER NOT NULL, " +
-                "soLuong INTEGER NOT NULL, " +
-                "giaTien INTEGER NOT NULL, " +
-                "FOREIGN KEY(maHD) REFERENCES HoaDon(maHD)," +
-                "FOREIGN KEY(maSP) REFERENCES SanPham(maSP)," +
-                "FOREIGN KEY(maKH) REFERENCES KHACHHANG(maKH))";
-        db.execSQL(createTableChiTietHoaDon);
+        String insert_user = "INSERT INTO User VALUES (1,'Poly Coffee','admin',1,'admin', 0332147469, 2003)";
+        db.execSQL(insert_user);
+
+// Bảng hóa đơn
+        String tableHoaDon = "CREATE Table HoaDon (\n" +
+                "MaHoaDon INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+                "MaUser INTEGER REFERENCES User(MaUser),\n" +
+                "TenKhachHang TEXT,\n" +
+                "NgayLapHD TEXT,\n" +
+                "MaGioHang INTEGER\n" +
+                ");";
+        db.execSQL(tableHoaDon);
+
+// Bảng giỏ hàng
+        String tableGioHang = "CREATE Table GioHang (\n" +
+                "MaGioHang INTEGER,\n" +
+                "MaSanPham INTEGER REFERENCES SanPham(MaSanPham),\n" +
+                "SoLuong INTEGER,\n" +
+                "Size TEXT,\n" +
+                "DonGia DOUBLE\n" +
+                ");";
+        db.execSQL(tableGioHang);
+
+// Bảng lưu hóa đơn
+        String tableLuuHoaDon = "CREATE Table LuuHoaDon (\n" +
+                "maLuu INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+                "maHoaDon INTEGER REFERENCES HoaDon(MaHoaDon),\n" +
+                "maUser INTEGER REFERENCES User(MaUser),\n" +
+                "tenUser TEXT,\n" +
+                "tenKhachHang TEXT,\n" +
+                "NgayLapHD TEXT,\n" +
+                "maSP INTEGER,\n" +
+                "tenSP TEXT,\n" +
+                "soLuong INTEGER,\n" +
+                "size TEXT,\n" +
+                "donGia DOUBLE\n," +
+                "thanhTien DOUBLE\n" +
+                ");";
+        db.execSQL(tableLuuHoaDon);
     }
-
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS Admin");
-        db.execSQL("DROP TABLE IF EXISTS NhanVien");
-        db.execSQL("DROP TABLE IF EXISTS KhachHang");
-        db.execSQL("DROP TABLE IF EXISTS LoaiSanPham");
-        db.execSQL("DROP TABLE IF EXISTS SanPham");
-        db.execSQL("DROP TABLE IF EXISTS DanhGia");
-        db.execSQL("DROP TABLE IF EXISTS GioHang");
-        db.execSQL("DROP TABLE IF EXISTS HoaDon");
-        db.execSQL("DROP TABLE IF EXISTS ChiTietHoaDon");
+        String dropLoaiSP = "drop table if exists THELOAI";
+        db.execSQL(dropLoaiSP);
+        String dropSanPham = "drop table if exists SanPham";
+        db.execSQL(dropSanPham);
+        String dropChucVu = "drop table if exists ChucVu";
+        db.execSQL(dropChucVu);
+        String dropUser = "drop table if exists User";
+        db.execSQL(dropUser);
+        String dropHoaDon = "drop table if exists HoaDon";
+        db.execSQL(dropHoaDon);
+        String dropLuuHoaDon = "drop table if exists LuuHoaDon";
+        db.execSQL(dropLuuHoaDon);
+        String dropGioHang = "drop table if exists GioHang";
+        db.execSQL(dropGioHang);
     }
 }

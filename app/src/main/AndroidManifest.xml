@@ -13,7 +13,7 @@
         android:theme="@style/Theme.DuAn1_PH38422_PH36893_PH40749"
         tools:targetApi="31">
         <activity
-            android:name=".Home"
+            android:name=".Wellcome"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -22,7 +22,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Wellcome"
+            android:name=".Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
