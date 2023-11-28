@@ -11,10 +11,12 @@
 
         <TextView
             android:id="@+id/txtSPHomeTittle"
-            style="@style/edt_Label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Cà phê truyền thống"
-            android:textColor="@color/red"
-            android:textStyle="bold" />
+            android:textColor="#00BFA5"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_SPTheoLoai"
