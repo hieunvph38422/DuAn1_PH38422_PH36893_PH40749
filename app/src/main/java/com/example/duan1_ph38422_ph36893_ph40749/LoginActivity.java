@@ -2,78 +2,130 @@ package com.example.duan1_ph38422_ph36893_ph40749;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.duan1_ph38422_ph36893_ph40749.Dao.UserDao;
+import com.example.duan1_ph38422_ph36893_ph40749.Model.User;
+
+import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText edtUserName, edtPassWord;
-    CheckBox chkRememberPass;
-    AdminDAO adminDAO;
-    String strUserName, strPassWord;
+    private UserDao userDao;
+    EditText edtUser, edtPassword;
+    ImageView img_hidePassword;
+    CheckBox checkBox;
+    Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        edtUserName = findViewById(R.id.edtUsername);
-        edtPassWord = findViewById(R.id.edtPassword);
-        chkRememberPass = findViewById(R.id.chkRememberPass);
-        adminDAO = new AdminDAO(this);
+        edtUser = findViewById(R.id.edtTenDangNhap);
+        edtPassword = findViewById(R.id.edtMatKhau);
+        checkBox = findViewById(R.id.chkNhoMK);
+        btnLogin = findViewById(R.id.btnDangNhap);
+        img_hidePassword = findViewById(R.id.img_hidePassword);
+        userDao = new UserDao(this);
+        edtPassword.getInputType();
 
-        ReadFile();
-
-        findViewById(R.id.btnLogin).setOnClickListener(v -> {
-            CheckLogin();
-        });
-        findViewById(R.id.btnCancel).setOnClickListener(v -> {
-            edtUserName.setText("");
-            edtPassWord.setText("");
-            chkRememberPass.setChecked(false);
-        });
-    }
-    private void ReadFile() {
-        SharedPreferences sharedPreferences = getSharedPreferences("LIST_USER", MODE_PRIVATE);
-        edtUserName.setText(sharedPreferences.getString("USERNAME", ""));
-        edtPassWord.setText(sharedPreferences.getString("PASSWORD", ""));
-        chkRememberPass.setChecked(sharedPreferences.getBoolean("REMEMBER", false));
-    }
-
-    private void CheckLogin() {
-        strUserName = edtUserName.getText().toString().trim();
-        strPassWord = edtPassWord.getText().toString().trim();
-        if (strUserName.isEmpty() || strPassWord.isEmpty()) {
-            Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
-        } else {
-            if (adminDAO.checkLogin(strUserName, strPassWord)) {
-                Admin admin = adminDAO.SelectID(strUserName);
-
-                Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                rememberUser(strUserName, strPassWord, chkRememberPass.isChecked());
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Toast.makeText(this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+        //sự kiện hide pass
+        img_hidePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (edtPassword.getInputType() != InputType.TYPE_TEXT_VARIATION_PASSWORD) {
+                    edtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    img_hidePassword.setImageResource(R.drawable.ic_hide_on);
+                } else {
+                    edtPassword.setInputType(129);
+                    img_hidePassword.setImageResource(R.drawable.ic_visibility_off);
+                }
             }
-        }
+        });
+
+        //        Get Data từ SharedPreferences
+        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
+        String user = pref.getString("USERNAME", "");
+        String pass = pref.getString("PASSWORD", "");
+        boolean rem = pref.getBoolean("REMEMBER", false);
+
+        edtUser.setText(user);
+        edtPassword.setText(pass);
+        checkBox.setChecked(rem);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String strUser = edtUser.getText().toString();
+                String strPass = edtPassword.getText().toString();
+                boolean checkLogin = true;
+
+//                Kiểm tra tên đăng nhập
+                if (strUser.isEmpty()) {
+                    edtUser.setHintTextColor(Color.RED);
+                    Toast.makeText(LoginActivity.this, "Nhập tên đăng nhập!", Toast.LENGTH_SHORT).show();
+                    checkLogin = false;
+                }
+//                Kiểm tra mật khẩu
+                if (strPass.isEmpty()) {
+                    edtPassword.setHintTextColor(Color.RED);
+                    Toast.makeText(LoginActivity.this, "Nhập mật khẩu!", Toast.LENGTH_SHORT).show();
+                    checkLogin = false;
+                }
+
+//                Kiểm tra User tồn tại
+                if (checkLogin) {
+                    ArrayList<User> list = userDao.checkLogin(strUser, strPass);
+                    if (list.size() > 0) {
+                        Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.putExtra("user", strUser);
+                        startActivity(intent);
+                        User user = list.get(0);
+                        int maUser = user.getID_User();
+                        remmemberUser(maUser, strUser, strPass, checkBox.isChecked());
+                        closeKeyboard();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Tên đăng nhập hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
     }
 
-    private void rememberUser(String strUserName, String strPassWord, boolean checked) {
-        SharedPreferences sharedPreferences = getSharedPreferences("LIST_USER", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        if (!checked) {
+    public void remmemberUser(int maUser, String u, String p, boolean status) {
+        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        if (!status) {
             editor.clear();
         } else {
-            editor.putString("USERNAME", strUserName);
-            editor.putString("PASSWORD", strPassWord);
-            editor.putBoolean("REMEMBER", checked);
+            editor.putInt("MA", maUser);
+            editor.putString("USERNAME", u);
+            editor.putString("PASSWORD", p);
+            editor.putBoolean("REMEMBER", status);
         }
         editor.commit();
+    }
+
+    private void closeKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }
