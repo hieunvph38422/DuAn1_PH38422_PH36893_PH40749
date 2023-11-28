@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5ECD9"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#F5ECD9"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -19,9 +19,9 @@
         android:padding="25dp">
 
         <ImageView
-            android:layout_marginTop="-100dp"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
+            android:layout_marginTop="-100dp"
             android:src="@drawable/logochicken" />
 
         <TextView
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tài khoản : "
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edtTenDangNhap"
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mật khẩu : "
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -87,11 +87,11 @@
 
                 <ImageView
                     android:id="@+id/img_hidePassword"
-                    android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_visibility_off" />
             </RelativeLayout>
 
@@ -107,11 +107,11 @@
             android:textSize="18dp" />
 
         <Button
+            android:id="@+id/btnDangNhap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnDangNhap"
-            android:text="Đăng nhập"
-            android:backgroundTint="#00C853"/>
+            android:backgroundTint="#00C853"
+            android:text="Đăng nhập" />
 
     </LinearLayout>
 

@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview_sanPham"
     android:layout_width="match_parent"
-    app:cardCornerRadius="15dp"
+    android:layout_height="wrap_content"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
     android:layout_marginBottom="10dp"
-    android:id="@+id/cardview_sanPham"
-    android:layout_height="wrap_content">
+    app:cardCornerRadius="15dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F6EDDA"
         android:padding="5dp">
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             app:cardCornerRadius="15dp">
+
             <ImageView
                 android:id="@+id/img_sanpham"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cocktail"
-                />
+                android:src="@drawable/cocktail" />
 
         </androidx.cardview.widget.CardView>
 
@@ -60,18 +61,17 @@
             android:id="@+id/boxicon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:orientation="horizontal"
+            android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            >
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/add_sanpham"
                 android:layout_width="20dp"
                 android:layout_height="30dp"
-                android:src="@drawable/plus"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                android:src="@drawable/plus" />
 
             <ImageView
                 android:id="@+id/info_sanpham"

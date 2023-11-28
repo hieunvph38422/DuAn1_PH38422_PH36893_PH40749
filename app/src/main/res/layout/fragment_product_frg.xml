@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.Product_frg">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,26 +15,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="3"
-            >
+            android:weightSum="3">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:gravity="center_vertical"
-                >
+                android:gravity="center_vertical">
 
                 <AutoCompleteTextView
                     android:id="@+id/edt_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
+                    android:background="#D3A055"
                     android:drawableStart="@drawable/search"
                     android:drawablePadding="10dp"
                     android:hint="Tìm kiếm sản phẩm"
                     android:padding="2dp"
-                    android:background="#D3A055"
                     android:paddingStart="15dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -41,27 +40,25 @@
 
                 <TextView
                     android:id="@+id/txtSearch"
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tìm kiếm"
-                    android:textSize="18dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
-                    android:layout_alignParentRight="true"
-                    />
+                    android:text="Tìm kiếm"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <ImageView
                     android:id="@+id/icDeleteSearch"
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="2dp"
                     android:layout_marginRight="10dp"
-                    />
+                    android:visibility="gone" />
 
             </RelativeLayout>
 
@@ -70,10 +67,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="0"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/ic_filter"
-                />
+                android:layout_weight="0"
+                android:src="@drawable/ic_filter" />
         </LinearLayout>
 
         <LinearLayout
@@ -85,28 +81,31 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:text="Menu Sản Phẩm"
                 android:textSize="26sp"
-                android:gravity="center_horizontal"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:id="@+id/recyclerProduct"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
 
             <TextView
                 android:id="@+id/txtNotifi3"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="100dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
                 android:text="Không có sản phẩm!"
-                android:textSize="20dp"
                 android:textAlignment="center"
+                android:textSize="20dp"
+                android:visibility="gone"
+
                 />
 
         </LinearLayout>

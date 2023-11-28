@@ -19,19 +19,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/menu"
+            android:background="#DAB465"
             app:itemIconTint="@color/black"
             app:itemTextColor="@color/black"
             app:labelVisibilityMode="labeled"
-            android:background="#DAB465"
-            />
+            app:menu="@menu/menu" />
 
     </LinearLayout>
 

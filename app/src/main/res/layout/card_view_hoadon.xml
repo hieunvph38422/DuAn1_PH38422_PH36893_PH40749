@@ -1,48 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F6EDDA"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingRight="10dp"
-        android:paddingBottom="3dp"
-        android:gravity="center_vertical"
-        >
+        android:paddingBottom="3dp">
 
         <TextView
             android:id="@+id/txtHDTenSP"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:text="Teen San Pharưerwerwerwerwerwerm"
-            android:paddingLeft="5dp"
             android:maxWidth="250dp"
-            android:textSize="18dp"
-            />
+            android:paddingLeft="5dp"
+            android:text="Teen San Pharưerwerwerwerwerwerm"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/txtHDDonGia"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="88.888"
             android:maxWidth="250dp"
+            android:text="88.888"
             android:textAlignment="center"
-            android:textSize="18dp"
-            />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/txtHDSL"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:text="88"
             android:maxWidth="250dp"
+            android:text="88"
             android:textAlignment="center"
-            android:textSize="18dp"
-            />
+            android:textSize="18dp" />
     </LinearLayout>
 
 

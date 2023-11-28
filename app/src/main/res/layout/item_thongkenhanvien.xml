@@ -2,54 +2,50 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            android:gravity="center_vertical">
+            android:paddingBottom="2dp">
 
             <TextView
                 android:id="@+id/txtTknvSTT"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
+                android:maxWidth="250dp"
                 android:text="01"
                 android:textAlignment="center"
-                android:maxWidth="250dp"
-                android:textSize="20dp"
-                />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/txtTknvTenNv"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="Nguyen Van Hieu"
-                android:maxWidth="230dp"
                 android:layout_marginLeft="10dp"
-                android:textStyle="bold"
+                android:maxWidth="230dp"
+                android:text="Nguyen Van Hieu"
                 android:textSize="20dp"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtTknvDoanhThu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.000.000"
-                android:textStyle="bold"
-                android:textSize="20dp"
                 android:layout_marginLeft="5dp"
-                />
+                android:text="1.000.000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -57,15 +53,12 @@
             android:id="@+id/bottomViewTknv"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="2dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="10dp"
             android:background="@android:color/darker_gray" />
 
     </LinearLayout>
-
-
-
 
 
 </androidx.cardview.widget.CardView>

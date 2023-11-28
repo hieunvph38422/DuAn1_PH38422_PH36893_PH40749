@@ -7,10 +7,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Home_frg;
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Product_frg;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -27,41 +30,38 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.pageTrangChu);
 
-        loadFragment(new Home_frg());
-
-
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment fragment;
-//        switch (item.getItemId()) {
-//            case R.id.pageTrangChu:
-               fragment = new Home_frg();
-                loadFragment(fragment);
-               return true;
-//
-//            case R.id.pageSanPham:
-//              fragment = new ProductFrgm();
-//             loadFragment(fragment);
-//                return true;
-//
-//            case R.id.pageBanHang:
-//               fragment = new StoreFrgm();
-//                loadFragment(fragment);
-//                return true;
-//
-//            case R.id.pageTaiKhoan:
-//               loadFragment(new Account_Fragment());
-//                return true;
-//        }
-//        return false;
+        int itemId = item.getItemId();
+        showMenu(itemId);
+        return true;
+    }
+    private boolean showMenu(int itemId) {
+        Fragment fragment = null;
+        try {
+            if (itemId == R.id.pageTrangChu) {
+                fragment = new Home_frg();
+
+            } else if (itemId == R.id.pageSanPham) {
+                fragment = new Product_frg();
+
+            } else if (itemId == R.id.pageBanHang) {
+//                fragment = new QlSachFragment();
+
+            } else if (itemId == R.id.pageTaiKhoan) {
+//                fragment = new QlThanhVienFragment();
+
+            }
+            if (fragment != null) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragment).commit();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 
-    public void loadFragment(Fragment fragment){
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
 }

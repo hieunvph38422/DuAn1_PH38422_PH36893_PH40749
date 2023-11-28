@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="#F6EDDA"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".Wellcome">
 
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/logochicken"/>
+        android:background="@drawable/logochicken" />
 
     <ImageView
 
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/fontchicken"
-        />
+        android:background="@drawable/fontchicken" />
 
 
 </LinearLayout>
