@@ -7,13 +7,13 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="@drawable/background"
+    android:background="#F5ECD9"
     tools:context=".LoginActivity">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="-100dp"
         android:src="@drawable/logochicken" />
 
     <TextView

@@ -7,11 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.example.duan1_ph38422_ph36893_ph40749.Dao.AdminDAO;
-import com.example.duan1_ph38422_ph36893_ph40749.Model.Admin;
 
 public class LoginActivity extends AppCompatActivity {
 

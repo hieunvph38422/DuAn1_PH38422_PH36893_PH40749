@@ -10,8 +10,8 @@ public class Db_Helper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ChickenCoffee.db";
     private static final int DATABASE_VERSION = 2;
 
-    public Db_Helper(@Nullable Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    public Db_Helper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Db_Helper extends SQLiteOpenHelper {
         String createTableTheLoai = "CREATE TABLE THELOAI(maLoai INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "tenLoai TEXT);";
         db.execSQL(createTableTheLoai);
-        db.execSQL("INSERT INTO THELOAI VALUES(1, 'Cà Phê Truyền Thống'), (2, 'Cà Phê Máy'), (3, 'Trà Sữa'), (4, 'Bánh Ngọt');");
+        db.execSQL("INSERT INTO THELOAI VALUES(1, 'Cà Phê Sữa'), (2, 'Cà Phê Máy'), (3, 'Cà Phê Đá'), (4, 'Cà Phê Đen');");
 
 //Bảng sản phẩm
         String createTableSanPham = ("CREATE TABLE SanPham(\n" +
