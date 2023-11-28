@@ -11,7 +11,7 @@ import com.example.duan1_ph38422_ph36893_ph40749.Model.GioHang;
 import java.util.ArrayList;
 
 public class GioHangDao {
-    private SQLiteDatabase database;
+    private static SQLiteDatabase database;
     Db_Helper db_helper;
     public GioHangDao(Context context){
         db_helper = new Db_Helper(context, "DuAn1", null, 1);
@@ -57,7 +57,7 @@ public class GioHangDao {
     }
 
     //    Sửa số lượng sản phẩm
-    public boolean updateGioHang(GioHang gioHang){
+    public static boolean updateGioHang(GioHang gioHang){
         ContentValues values = new ContentValues();
         values.put("MaGioHang", gioHang.getMaGioHang());
         values.put("MaSanPham", gioHang.getMaSanPham());
@@ -74,7 +74,7 @@ public class GioHangDao {
     }
 
     //    Check tồn tại SP
-    public ArrayList<GioHang> checkValidGioHang(GioHang gioHang){
+    public static ArrayList<GioHang> checkValidGioHang(GioHang gioHang){
         ArrayList<GioHang> list = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT GioHang.MaGioHang, GioHang.masanpham, SanPham.image, SanPham.tensanpham, GioHang.SoLuong, GioHang.size, GioHang.dongia FROM GioHang, SanPham WHERE GioHang.MaSanPham = SanPham.MaSanPham AND SanPham.MaSanPham = ? AND GioHang.size = ?", new String[]{String.valueOf(gioHang.getMaSanPham()), gioHang.getSize()});
         if (cursor.getCount() != 0){

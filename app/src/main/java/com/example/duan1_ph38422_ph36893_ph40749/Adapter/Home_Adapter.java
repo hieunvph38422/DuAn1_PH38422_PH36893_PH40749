@@ -2,6 +2,8 @@ package com.example.duan1_ph38422_ph36893_ph40749.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.ChiTietSP_frg;
+import com.example.duan1_ph38422_ph36893_ph40749.MainActivity;
 import com.example.duan1_ph38422_ph36893_ph40749.Model.SanPham;
 import com.example.duan1_ph38422_ph36893_ph40749.R;
 
@@ -33,12 +40,23 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        SanPham sanPham = list.get(position);
+        byte[] productsImage = sanPham.getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
+        holder.itemSpHomeImg.setImageBitmap(bitmap);
+        holder.itemSpHomeTen.setText(sanPham.getTenSanPham());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.bottomNavigationView.setSelectedItemId(R.id.pageSanPham);
+                loadFragment(new ChiTietSP_frg(sanPham));
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -49,5 +67,11 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.ViewHolder> 
             itemSpHomeTen = itemView.findViewById(R.id.itemSpHomeTen);
             itemSpHomeImg = itemView.findViewById(R.id.itemSpHomeImg);
         }
+    }
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
