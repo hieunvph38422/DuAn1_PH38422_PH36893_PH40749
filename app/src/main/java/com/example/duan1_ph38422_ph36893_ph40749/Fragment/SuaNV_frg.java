@@ -142,7 +142,7 @@ public class SuaNV_frg extends Fragment {
                                     loadFragment(new UserInfor_frg());
                                 }
                                 else {
-//                                    loadFragment(new TKNhanVienFrgm());
+                                    loadFragment(new ThongKeNV_frg());
                                 }
                             }
                             else {
@@ -174,7 +174,7 @@ public class SuaNV_frg extends Fragment {
                     loadFragment(new UserInfor_frg());
                 }
                 else {
-//                    loadFragment(new ViewUserInforFrgm(user));
+                    loadFragment(new ViewUserInfor_frg(user));
                 }
             }
         });

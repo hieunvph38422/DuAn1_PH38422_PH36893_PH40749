@@ -20,6 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.duan1_ph38422_ph36893_ph40749.Dao.GioHangDao;
 import com.example.duan1_ph38422_ph36893_ph40749.Dao.UserDao;
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.ChiTietSP_frg;
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.SuaChiTietSP_frg;
 import com.example.duan1_ph38422_ph36893_ph40749.Model.GioHang;
 import com.example.duan1_ph38422_ph36893_ph40749.Model.SanPham;
 import com.example.duan1_ph38422_ph36893_ph40749.Model.User;
@@ -69,8 +71,8 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.UserView
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                bottomNavigationView.setSelectedItemId(R.id.pageBanHang);
-   //             loadFragment(new ChiTietSPFrgm(sanPham));
+                bottomNavigationView.setSelectedItemId(R.id.pageBanHang);
+                loadFragment(new ChiTietSP_frg(sanPham));
             }
         });
 //        Button thêm sản phẩm vào giỏ hàng (Icon ADD)
@@ -119,7 +121,7 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.UserView
         holder.info_sanpham.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadFragment(new ChiTietSPSuaFrgm(sanPham));
+                loadFragment(new SuaChiTietSP_frg(sanPham));
             }
         });
     }

@@ -4,20 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5ECD9"
-    tools:context=".Fragment.UserInfor_frg">
+    tools:context=".Fragment.ViewUserInfor_frg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00B8D4"
+        android:background="#00BCD4"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingTop="5dp"
         android:paddingBottom="5dp">
 
         <ImageView
-            android:id="@+id/btnBackUserInfo"
+            android:id="@+id/btnBackViewUserInfo"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
@@ -27,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
-            android:text="Thông Tin Cá Nhân"
+            android:text="Thông Tin Nhân Viên"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25dp" />
@@ -35,6 +34,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -43,7 +43,7 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/logochicken"
+            android:src="@drawable/anh1"
             />
 
     </LinearLayout>
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:text="Họ và tên"
                 android:layout_marginLeft="15dp"
-                android:textSize="25dp" />
+                android:textSize="24dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,12 +78,56 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_account_24" />
+                    android:background="@drawable/ic_account_24"
+                  />
 
                 <TextView
-                    android:id="@+id/txtInfoFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/txtViewInfoFullName"
+                    android:layout_marginLeft="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="AdminName"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên đăng nhập"
+                android:layout_marginLeft="15dp"
+                android:textSize="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_account_24"
+               />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtViewInfoUserName"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="AdminName"
@@ -106,51 +150,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tên đăng nhập"
-                android:layout_marginLeft="15dp"
-                android:textSize="25dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_account_24" />
-
-                <TextView
-                    android:id="@+id/txtInfoUserName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:paddingBottom="3dp"
-                    android:text="Admin"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/darker_gray" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="Chức vụ"
                 android:layout_marginLeft="15dp"
-                android:textSize="25dp" />
+                android:textSize="24dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -161,12 +163,13 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_account" />
+                    android:background="@drawable/ic_account_24"
+                     />
 
                 <TextView
-                    android:id="@+id/txtInfoChucVu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/txtViewInfoChucVu"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="AdminName"
@@ -201,10 +204,11 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_phone" />
+                    android:background="@drawable/ic_phone"
+               />
 
                 <TextView
-                    android:id="@+id/txtInfoSDT"
+                    android:id="@+id/txtViewInfoSDT"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -243,10 +247,10 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:backgroundTint="@color/black"
-                    android:src="@drawable/ic_date" />
+                    android:background="@drawable/ic_date"/>
 
                 <TextView
-                    android:id="@+id/txtInfoNamSinh"
+                    android:id="@+id/txtViewInfoNamSinh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -258,26 +262,56 @@
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/btnInfoEdit"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00BFA5"
-            android:backgroundTint="#00BFA5"
-            android:text="Chỉnh Sửa Thông Tin"
             android:gravity="center"
-            android:textSize="25dp"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:editable="false"
-            android:focusable="false"
-            />
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            >
+
+            <EditText
+                android:id="@+id/btnViewInfoSua"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Chỉnh Sửa"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingTop="7dp"
+                android:background="#FF0000"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:editable="false"
+                android:focusable="false"
+                android:layout_marginRight="15dp"
+                />
+
+            <EditText
+                android:id="@+id/btnViewInfoXoa"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="#FF0000"
+                android:text="Xóa NV"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:editable="false"
+                android:focusable="false"
+                />
+        </LinearLayout>
 
     </LinearLayout>
+
 
 </LinearLayout>

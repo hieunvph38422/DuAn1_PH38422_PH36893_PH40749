@@ -70,7 +70,7 @@ public class UserInfor_frg extends Fragment {
         btnInfoEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadFragment(new SuaNVFrgm(user));
+                loadFragment(new SuaNV_frg(user));
             }
         });
 

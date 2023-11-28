@@ -32,15 +32,12 @@ public class Account_frg extends Fragment {
     TextView txtUserName, txtChucVu;
     UserDao userDao;
 
-    public Account_frg() {
-        // Required empty public constructor
-    }
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_account_frg, container, false);
 
         userFrgmTaiKhoan = view.findViewById(R.id.userFrgmTaiKhoan);
@@ -80,21 +77,21 @@ public class Account_frg extends Fragment {
         userFrgmDoiMK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadFragment(new DoiMKFrgm());
+                loadFragment(new DoiMK_frg());
             }
         });
 
         userFrgmTKDoanhThu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadFragment(new TKDoanhThuFrgm());
+                loadFragment(new ThongKeDT_frg());
             }
         });
 
         userFrgmTKNhanVien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadFragment(new TKNhanVienFrgm());
+                loadFragment(new ThongKeNV_frg());
             }
         });
 
