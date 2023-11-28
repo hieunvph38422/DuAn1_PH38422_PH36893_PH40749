@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Account_frg;
 import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Home_frg;
 import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Product_frg;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //                fragment = new QlSachFragment();
 
             } else if (itemId == R.id.pageTaiKhoan) {
-//                fragment = new QlThanhVienFragment();
+                fragment = new Account_frg();
 
             }
             if (fragment != null) {
