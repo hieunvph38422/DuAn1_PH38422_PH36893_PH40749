@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Home_frg;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.pageTrangChu);
 
-//        loadFragment(new HomeFrgm());
+        loadFragment(new Home_frg());
 
 
     }
@@ -34,27 +35,27 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment;
-        switch (item.getItemId()) {
+//        switch (item.getItemId()) {
 //            case R.id.pageTrangChu:
-////                fragment = new HomeFrgm();
-////                loadFragment(fragment);
-//                return true;
+               fragment = new Home_frg();
+                loadFragment(fragment);
+               return true;
 //
 //            case R.id.pageSanPham:
-////                fragment = new ProductFrgm();
-////                loadFragment(fragment);
+//              fragment = new ProductFrgm();
+//             loadFragment(fragment);
 //                return true;
 //
 //            case R.id.pageBanHang:
-////                fragment = new StoreFrgm();
-////                loadFragment(fragment);
+//               fragment = new StoreFrgm();
+//                loadFragment(fragment);
 //                return true;
 //
 //            case R.id.pageTaiKhoan:
-////                loadFragment(new Account_Fragment());
+//               loadFragment(new Account_Fragment());
 //                return true;
-        }
-        return false;
+//        }
+//        return false;
     }
 
     public void loadFragment(Fragment fragment){
