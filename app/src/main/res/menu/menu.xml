@@ -18,6 +18,6 @@
     <item
         android:id="@+id/pageTaiKhoan"
         android:enabled="true"
-        android:icon="@drawable/ic_account"
+        android:icon="@drawable/ic_account1"
         android:title="Tài Khoản"/>
 </menu>
