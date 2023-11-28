@@ -42,7 +42,7 @@
                 android:id="@+id/txtHDTenNV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nguyen Dat"
+                android:text="Nguyen Van Hieu"
                 android:textSize="18dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -63,7 +63,7 @@
                 android:id="@+id/txtHDTenKH"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nguyen Dat"
+                android:text="Nguyen Van Hieu"
                 android:textSize="18dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -84,7 +84,7 @@
                 android:id="@+id/txtHDNgayBan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="22/11/2003"
+                android:text="13/09/2004"
                 android:textSize="18dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -193,15 +193,17 @@
                 android:backgroundTint="#00BFA5"
                 android:text="Hủy"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:paddingTop="7dp"
-                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:editable="false"
                 android:focusable="false"
                 android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
                 />
 
             <EditText
@@ -212,13 +214,14 @@
                 android:backgroundTint="#00BFA5"
                 android:text="Xác Nhận"
                 android:gravity="center"
-                android:textSize="25dp"
-                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:paddingTop="7dp"
-                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
+                android:layout_marginBottom="10dp"
                 android:editable="false"
                 android:focusable="false"
                 />
