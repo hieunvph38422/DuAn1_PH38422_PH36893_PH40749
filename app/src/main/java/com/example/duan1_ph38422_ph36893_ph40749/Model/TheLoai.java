@@ -4,7 +4,7 @@ public class TheLoai {
     private int maLoai;
     private String tenLoai;
 
-    public TheLoai() {
+    public TheLoai(String strLoai) {
     }
 
     public TheLoai(int maLoai, String tenLoai) {

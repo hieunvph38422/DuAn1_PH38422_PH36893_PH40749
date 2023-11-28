@@ -101,21 +101,21 @@ public class Account_frg extends Fragment {
         userFrgmThemSP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadFragment(new ThemSPFrgm());
+                loadFragment(new ThemSPFrgm());
             }
         });
 
         userFrgmThemLSP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadFragment(new ThemLSPFragm());
+                loadFragment(new ThemLSPFrgm());
             }
         });
 
         userFrgmThemNhanVien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                loadFragment(new ThemNhanVienFrgm());
+                loadFragment(new ThemNhanVienFrgm());
             }
         });
 
