@@ -6,12 +6,11 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.example.duan1_ph38422_ph36893_ph40749.FragmentManager.Account_Fragment;
-import com.example.duan1_ph38422_ph36893_ph40749.FragmentManager.HomeFrgm;
-import com.example.duan1_ph38422_ph36893_ph40749.FragmentManager.ProductFrgm;
-import com.example.duan1_ph38422_ph36893_ph40749.FragmentManager.StoreFrgm;
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Account_Frg;
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Home_Frg;
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Product_Frg;
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Store_Frg;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -39,16 +38,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Fragment fragment = null;
         try {
             if (itemId == R.id.pageTrangChu) {
-                fragment = new HomeFrgm();
+                fragment = new Home_Frg();
 
             } else if (itemId == R.id.pageSanPham) {
-                fragment = new ProductFrgm();
+                fragment = new Product_Frg();
 
             } else if (itemId == R.id.pageBanHang) {
-                fragment = new StoreFrgm();
+                fragment = new Store_Frg();
 
             } else if (itemId == R.id.pageTaiKhoan) {
-                fragment = new Account_Fragment();
+                fragment = new Account_Frg();
 
             }
             if (fragment != null) {
