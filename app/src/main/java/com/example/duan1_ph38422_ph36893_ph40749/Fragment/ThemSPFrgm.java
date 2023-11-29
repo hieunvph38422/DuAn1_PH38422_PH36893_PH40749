@@ -44,14 +44,16 @@ public class ThemSPFrgm extends Fragment {
     AutoCompleteTextView edtLoaiSP;
     private SanPhamDao sanPhamDao;
     final int REQUEST_CODE_GALLERY = 999;
+
     String strTenSP, strGiaban, strLoaiSP, strMota;
+;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_them_s_p_frgm, container, false);
-        // ánh xạ
+        //ánh xạ
         sanPhamDao = new SanPhamDao(getActivity());
         ImageView btnBackThemSP = view.findViewById(R.id.btnBackThemSP);
         AddImg = view.findViewById(R.id.add_image);
@@ -61,15 +63,23 @@ public class ThemSPFrgm extends Fragment {
         edtLoaiSP = view.findViewById(R.id.edtLoaiSP);
         btnAddSP = view.findViewById(R.id.btnAcceptSP);
         btnHuySP = view.findViewById(R.id.btnHuySp);
+
         btnBackThemSP.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                loadFragment(new Account_frg());
+            }
+        });
+        AddImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         REQUEST_CODE_GALLERY);
                 LayAnh();
             }
         });
+
 //        Set Data cho spnLoaiSP - AnhNQ
         ArrayList<TheLoai> listTheLoai = sanPhamDao.getDSLSP();
         ArrayList<String> listTenTL = new ArrayList<>();
@@ -82,11 +92,13 @@ public class ThemSPFrgm extends Fragment {
                 listMaTL.add(theLoaiModel.getMaLoai());
             }
         }
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (getContext(), android.R.layout.select_dialog_item, listTenTL);
 
         edtLoaiSP.setThreshold(1);
         edtLoaiSP.setAdapter(adapter);
+
 
 //        Set sự kiện Click Button Thêm
         btnAddSP.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +140,7 @@ public class ThemSPFrgm extends Fragment {
                 }
             }
         });
+
 //        Set sự kiện Click Button Hủy
         btnHuySP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +150,7 @@ public class ThemSPFrgm extends Fragment {
         });
         return view;
     }
+
     private byte[] imageToByte(ImageView image) {
         Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

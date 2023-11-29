@@ -27,6 +27,7 @@ SanPhamDao sanPhamDao;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_them_l_s_p_frgm, container, false);
+
 //        Khai báo DAO
         sanPhamDao = new SanPhamDao(getContext());
 
@@ -96,6 +97,7 @@ SanPhamDao sanPhamDao;
         });
         return view;
     }
+
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = (getActivity()).getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, fragment);

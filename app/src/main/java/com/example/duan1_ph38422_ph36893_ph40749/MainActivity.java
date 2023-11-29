@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Account_frg;
 import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Home_frg;
 import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Product_frg;
+import com.example.duan1_ph38422_ph36893_ph40749.Fragment.StroreFrgm;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new Product_frg();
 
             } else if (itemId == R.id.pageBanHang) {
-//                fragment = new QlSachFragment();
+                fragment = new StroreFrgm();
 
             } else if (itemId == R.id.pageTaiKhoan) {
                 fragment = new Account_frg();

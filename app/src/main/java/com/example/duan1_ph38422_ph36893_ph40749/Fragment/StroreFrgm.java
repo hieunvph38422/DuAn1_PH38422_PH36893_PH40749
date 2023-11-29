@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.duan1_ph38422_ph36893_ph40749.Adapter.AdapterHoaDon;
+import com.example.duan1_ph38422_ph36893_ph40749.Adapter.HoaDon_Adapter;
 import com.example.duan1_ph38422_ph36893_ph40749.Adapter.GioHang_Adapter;
 import com.example.duan1_ph38422_ph36893_ph40749.Dao.GioHangDao;
 import com.example.duan1_ph38422_ph36893_ph40749.Dao.HoaDonDao;
@@ -169,7 +169,7 @@ public class StroreFrgm extends Fragment {
                         listGioHang = daoGioHang.getGioHang();
                         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
                         recycle_hoaDon.setLayoutManager(linearLayoutManager);
-                        AdapterHoaDon adapterHoaDon = new AdapterHoaDon(getContext(), listGioHang);
+                        HoaDon_Adapter adapterHoaDon = new HoaDon_Adapter(getContext(), listGioHang);
                         recycle_hoaDon.setAdapter(adapterHoaDon);
 
 //                Sự kiện Button Hủy

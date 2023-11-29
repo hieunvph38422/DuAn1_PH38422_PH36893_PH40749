@@ -26,6 +26,7 @@ import java.util.ArrayList;
 public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.ViewHolder> {
     private ArrayList<SanPham> list;
     private Context context;
+
     public Home_Adapter(ArrayList<SanPham> list, Context context) {
         this.list = list;
         this.context = context;
@@ -60,14 +61,17 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+
         TextView itemSpHomeTen;
         ImageView itemSpHomeImg;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemSpHomeTen = itemView.findViewById(R.id.itemSpHomeTen);
             itemSpHomeImg = itemView.findViewById(R.id.itemSpHomeImg);
         }
     }
+
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, fragment);

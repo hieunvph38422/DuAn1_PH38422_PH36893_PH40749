@@ -77,7 +77,7 @@ public class SuaChiTietSP_frg extends Fragment implements View.OnClickListener{
         btnCTSPSuaSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new SuaChiTietSP_frg(sanPham));
+                loadFragment(new SuaSPFrgm(sanPham));
             }
         });
         // xoá sửa sản phẩm

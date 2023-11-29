@@ -9,49 +9,44 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.duan1_ph38422_ph36893_ph40749.Dao.GioHangDao;
-import com.example.duan1_ph38422_ph36893_ph40749.Model.GioHang;
+import com.example.duan1_ph38422_ph36893_ph40749.Model.LuuHoaDon;
 import com.example.duan1_ph38422_ph36893_ph40749.R;
 
 import java.util.ArrayList;
 
-public class AdapterHoaDon extends RecyclerView.Adapter<AdapterHoaDon.ViewHolder> {
+public class ThongTinHD_Adapter extends RecyclerView.Adapter<ThongTinHD_Adapter.ViewHolder>{
     private Context context;
-    private ArrayList<GioHang> list;
-    GioHangDao daoGioHang;
+    private ArrayList<LuuHoaDon> listHoaDon;
 
-    public AdapterHoaDon(Context context, ArrayList<GioHang> list) {
+    public ThongTinHD_Adapter(Context context, ArrayList<LuuHoaDon> listHoaDon){
         this.context = context;
-        this.list = list;
+        this.listHoaDon = listHoaDon;
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_view_hoadon, parent, false);
-        daoGioHang = new GioHangDao(view.getContext());
-        return new AdapterHoaDon.ViewHolder(view);
+        return new ThongTinHD_Adapter.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        GioHang gioHang = list.get(position);
-        holder.txtHDTenSP.setText(gioHang.getTenSP() + "(" + gioHang.getSize() + ")");
-        double donGia = gioHang.getDonGia();
+        LuuHoaDon luuHoaDon = listHoaDon.get(position);
+        holder.txtHDTenSP.setText(luuHoaDon.getTenSP() + " (" + luuHoaDon.getSize() + ")");
+        holder.txtHDSL.setText(luuHoaDon.getSoLuong() + "");
+        double donGia = luuHoaDon.getDonGia();
         String outDonGia = String.format("%,.0f", donGia);
         holder.txtHDDonGia.setText(outDonGia);
-        holder.txtHDSL.setText(gioHang.getSoLuong() + "");
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return listHoaDon.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-
         TextView txtHDTenSP, txtHDDonGia, txtHDSL;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtHDTenSP = itemView.findViewById(R.id.txtHDTenSP);

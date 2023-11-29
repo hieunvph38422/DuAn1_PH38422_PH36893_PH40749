@@ -24,10 +24,10 @@ public class GioHang_Adapter extends RecyclerView.Adapter<GioHang_Adapter.ViewHo
     private ArrayList<GioHang> list;
     private Context context;
     GioHangDao daoGioHang;
-    StroreFrgm storeFrgm;
 
 
-    public GioHang_Adapter(Context context, ArrayList<GioHang> listGioHang) {
+
+    public GioHang_Adapter(Context context, ArrayList<GioHang> list) {
         this.context = context;
         this.list = list;
     }

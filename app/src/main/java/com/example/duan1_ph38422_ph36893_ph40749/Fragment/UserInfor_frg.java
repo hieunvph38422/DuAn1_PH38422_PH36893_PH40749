@@ -24,9 +24,6 @@ public class UserInfor_frg extends Fragment {
     UserDao userDao;
     EditText btnInfoEdit;
 
-    public UserInfor_frg() {
-        // Required empty public constructor
-    }
 
 
 

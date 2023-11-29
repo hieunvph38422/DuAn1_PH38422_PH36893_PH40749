@@ -32,7 +32,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.duan1_ph38422_ph36893_ph40749.Adapter.AdapterSanPham;
+import com.example.duan1_ph38422_ph36893_ph40749.Adapter.Product_Adapter;
 import com.example.duan1_ph38422_ph36893_ph40749.Dao.SanPhamDao;
 import com.example.duan1_ph38422_ph36893_ph40749.Model.SanPham;
 import com.example.duan1_ph38422_ph36893_ph40749.Model.TheLoai;
@@ -49,11 +49,11 @@ public class SuaSPFrgm extends Fragment {
     AutoCompleteTextView edtLoaiSP;
     SanPham sanPham;
     ImageView imgUpdate;
-    SanPhamDao daoSanPham;
+    SanPhamDao sanPhamDao;
     String strTenSP, strMota, strLoaiSP;
     double strGiaban;
     ArrayList<SanPham> arrayList;
-    Adapter adapter = null;
+    Product_Adapter product_adapter = null;
     int maLoai, index;
     boolean checkTL;
 
@@ -76,16 +76,16 @@ public class SuaSPFrgm extends Fragment {
         edUpdateMoTa = view.findViewById(R.id.update_moTa);
         edtLoaiSP = view.findViewById(R.id.edUpdateLSP);
         btnUpdate = view.findViewById(R.id.btnUpdateSp);
-        daoSanPham = new SanPhamDao(getContext());
+        sanPhamDao = new SanPhamDao(getContext());
         arrayList = new ArrayList<>();
-        adapter = (Adapter) new AdapterSanPham(getActivity(), arrayList);
+        product_adapter = new Product_Adapter(getActivity(), arrayList);
 
 //        Settext cho Edittext
         edUpdateGiaBan.setText(sanPham.getPrice() + "");
         edUpdateTenSP.setText(sanPham.getTenSanPham());
         maLoai = sanPham.getMaLoai();
         String tenLoai = "";
-        ArrayList<TheLoai> listTL = daoSanPham.getDSLSP();
+        ArrayList<TheLoai> listTL = sanPhamDao.getDSLSP();
         for (int i = 0; i < listTL.size(); i++) {
             if (listTL.get(i).getMaLoai() == maLoai){
                 tenLoai = listTL.get(i).getTenLoai();
@@ -126,7 +126,7 @@ public class SuaSPFrgm extends Fragment {
                 edUpdateTenSP.setText(sanPham.getTenSanPham());
                 maLoai = sanPham.getMaLoai();
                 String tenLoai = "";
-                ArrayList<TheLoai> listTL = daoSanPham.getDSLSP();
+                ArrayList<TheLoai> listTL = sanPhamDao.getDSLSP();
                 for (int i = 0; i < listTL.size(); i++) {
                     if (listTL.get(i).getMaLoai() == maLoai){
                         tenLoai = listTL.get(i).getTenLoai();
@@ -141,7 +141,7 @@ public class SuaSPFrgm extends Fragment {
             }
         });
 //        Set Data cho spnLoaiSP - AnhNQ
-        ArrayList<TheLoai> listTheLoai = daoSanPham.getDSLSP();
+        ArrayList<TheLoai> listTheLoai = sanPhamDao.getDSLSP();
         ArrayList<String> listTenTL = new ArrayList<>();
         ArrayList<Integer> listMaTL = new ArrayList<>();
         int listTheLoaiSize = listTheLoai.size();
@@ -205,7 +205,7 @@ public class SuaSPFrgm extends Fragment {
                         public void onClick(View v) {
                             if (checkEdt()) {
                                 maLoai = listMaTL.get(index);
-                                daoSanPham.updateSanPham(imageToByte(imgUpdate), strTenSP, strGiaban, maLoai, strMota, sanPham.getId());
+                                sanPhamDao.updateSanPham(imageToByte(imgUpdate), strTenSP, strGiaban, maLoai, strMota, sanPham.getId());
                                 Toast.makeText(getActivity(), "Sửa thành công", Toast.LENGTH_SHORT).show();
                                 loadFragment(new Product_frg());
                                 resetEdt();

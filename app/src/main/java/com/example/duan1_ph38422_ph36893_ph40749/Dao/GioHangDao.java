@@ -14,7 +14,7 @@ public class GioHangDao {
     private static SQLiteDatabase database;
     Db_Helper db_helper;
     public GioHangDao(Context context){
-        db_helper = new Db_Helper(context, "DuAn1", null, 1);
+        db_helper = new Db_Helper(context, "GioHang", null, 1);
         database = db_helper.getWritableDatabase();
         database = db_helper.getReadableDatabase();
     }

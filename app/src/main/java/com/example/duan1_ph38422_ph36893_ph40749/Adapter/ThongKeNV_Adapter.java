@@ -43,6 +43,8 @@ public class ThongKeNV_Adapter extends RecyclerView.Adapter<ThongKeNV_Adapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+
         LuuHoaDon luuHoaDon = list.get(position);
         String index = "";
         if (position < 9){
@@ -97,8 +99,7 @@ public class ThongKeNV_Adapter extends RecyclerView.Adapter<ThongKeNV_Adapter.Vi
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtTknvSTT = itemView.findViewById(
-                    R.id.txtTknvSTT);
+            txtTknvSTT = itemView.findViewById(R.id.txtTknvSTT);
             txtTknvTenNv = itemView.findViewById(R.id.txtTknvTenNv);
             txtTknvDoanhThu = itemView.findViewById(R.id.txtTknvDoanhThu);
             bottomViewTknv = itemView.findViewById(R.id.bottomViewTknv);

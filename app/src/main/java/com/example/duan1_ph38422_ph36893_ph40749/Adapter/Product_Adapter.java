@@ -30,29 +30,32 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.ViewHolder> {
+public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.UserViewHolder> {
     private Context context;
     private ArrayList<SanPham> list;
     GioHangDao gioHangDao;
     UserDao userDao;
     BottomNavigationView bottomNavigationView;
+
     public Product_Adapter(Context context, ArrayList<SanPham> list) {
         this.context = context;
         this.list = list;
     }
+
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_view_sanpham, parent, false);
         gioHangDao = new GioHangDao(view.getContext());
         userDao = new UserDao(view.getContext());
         bottomNavigationView = view.findViewById(R.id.navigation);
-        return new ViewHolder(view);
+        return new UserViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+
         SanPham sanPham = list.get(position);
         holder.TenSanPham.setText(sanPham.getTenSanPham());
         holder.GiaTien.setText(String.valueOf(sanPham.getPrice()));
@@ -131,12 +134,13 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.ViewHo
         return 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class UserViewHolder extends RecyclerView.ViewHolder {
         private CardView cardView;
         private ImageView add_sanpham, info_sanpham, img_SanPham;
         private TextView TenSanPham;
         private TextView GiaTien;
-        public ViewHolder(@NonNull View itemView) {
+
+        public UserViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.cardview_sanPham);
             info_sanpham = itemView.findViewById(R.id.info_sanpham);
@@ -152,4 +156,5 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.ViewHo
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
 }

@@ -81,8 +81,8 @@ public class ThongKeDT_Adapter extends RecyclerView.Adapter<ThongKeDT_Adapter.Vi
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(dialog.getContext());
                 recycle_hoaDon.setLayoutManager(linearLayoutManager);
-//                AdapterThongTinHD adapterThongTinHD = new AdapterThongTinHD(dialog.getContext(), listHoaDon2);
-//                recycle_hoaDon.setAdapter(adapterThongTinHD);
+                ThongTinHD_Adapter thongTinHD_adapter = new ThongTinHD_Adapter(dialog.getContext(), listHoaDon2);
+                recycle_hoaDon.setAdapter(thongTinHD_adapter);
 
                 double doanhThu = luuHoaDonDao.tongThuHD(hoaDon.getMaHoaDon());
                 String outDoanhThu = String.format("%,.0f", doanhThu);
