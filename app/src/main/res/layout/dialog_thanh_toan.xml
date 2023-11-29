@@ -2,17 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_marginLeft="30dp"
     android:layout_marginRight="30dp"
-    android:gravity="center"
-    android:orientation="vertical">
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F6EDDA"
+        android:orientation="vertical"
+        android:background="@drawable/ct_dialog"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        >
 
 
         <TextView
@@ -20,7 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hóa đơn thanh toán"
+            android:fontFamily="@font/ct_font_medium"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="28dp"
             android:textStyle="bold" />
 
@@ -33,16 +37,19 @@
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:text="Nhân viên:"
+                android:fontFamily="@font/ct_font_medium"
+                android:textColor="@color/white"
                 android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/txtHDTenNV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nguyen Van Hieu"
+                android:text="Nguyen Dat"
+                android:textColor="@color/white"
                 android:textSize="18dp"
+                android:fontFamily="@font/ct_font_bold"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -55,15 +62,18 @@
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:text="Khách hàng:"
+                android:textColor="@color/white"
+                android:fontFamily="@font/ct_font_medium"
                 android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/txtHDTenKH"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nguyen Van Hieu"
+                android:text="Nguyen Dat"
+                android:fontFamily="@font/ct_font_bold"
+                android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -77,15 +87,18 @@
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:text="Ngày bán:"
+                android:fontFamily="@font/ct_font_medium"
+                android:textColor="@color/white"
                 android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/txtHDNgayBan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="13/09/2004"
+                android:text="22/11/2003"
+                android:fontFamily="@font/ct_font_bold"
+                android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -99,8 +112,10 @@
             <TextView
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:text="Tên Sản Phẩm"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ct_font_medium"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -108,7 +123,9 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:text="Đ.Giá"
+                android:fontFamily="@font/ct_font_medium"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -116,7 +133,9 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="S.lg"
+                android:fontFamily="@font/ct_font_bold"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -125,7 +144,6 @@
             android:id="@+id/recycle_hoaDon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:padding="10dp" />
 
         <View
@@ -137,29 +155,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
+            android:weightSum="2"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tổng tiền"
-                    android:textSize="20dp" />
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/ct_font_medium"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thanh toán"
-                    android:textSize="20dp" />
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/ct_font_medium"
+                    />
 
 
             </LinearLayout>
@@ -171,55 +197,60 @@
                 android:layout_weight="1"
                 android:text="000.000đ"
                 android:textAlignment="textEnd"
+                android:textColor="@color/white"
                 android:textSize="30dp"
+                android:fontFamily="@font/ct_font_bold"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            >
 
             <EditText
                 android:id="@+id/btnHoaDonHuy"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="10dp"
-                android:background="#FFAB00"
-                android:backgroundTint="#FFAB00"
+                android:background="@drawable/bo_tron_edt"
+                android:backgroundTint="@color/white"
+                android:text="Hủy"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/ct_font_medium"
+                android:textStyle="bold"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:editable="false"
                 android:focusable="false"
-                android:gravity="center"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="10dp"
-                android:text="Hủy"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_marginRight="15dp"
+                />
 
             <EditText
                 android:id="@+id/btnHoaDonXN"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="#00BFA5"
-                android:backgroundTint="#00BFA5"
+                android:background="@drawable/bo_tron_edt"
+                android:backgroundTint="@color/white"
+                android:text="Xác Nhận"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/ct_font_medium"
+                android:textStyle="bold"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:editable="false"
                 android:focusable="false"
-                android:gravity="center"
-                android:paddingLeft="5dp"
-                android:paddingTop="10dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="10dp"
-                android:text="Xác Nhận"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                />
         </LinearLayout>
 
     </LinearLayout>

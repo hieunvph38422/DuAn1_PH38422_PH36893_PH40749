@@ -13,6 +13,7 @@ public class HoaDon {
     String size;
     double donGia;
     double thanhTien;
+
     public HoaDon(int maUser, String tenKhachHang, String ngayLapHD, int maGiohang) {
         this.maUser = maUser;
         this.tenKhachHang = tenKhachHang;
@@ -34,20 +35,20 @@ public class HoaDon {
         this.thanhTien = thanhTien;
     }
 
-    public int getMaHoaDon() {
-        return maHoaDon;
+    public int getMaSP() {
+        return maSP;
     }
 
-    public void setMaHoaDon(int maHoaDon) {
-        this.maHoaDon = maHoaDon;
+    public void setMaSP(int maSP) {
+        this.maSP = maSP;
     }
 
-    public int getMaUser() {
-        return maUser;
+    public double getThanhTien() {
+        return thanhTien;
     }
 
-    public void setMaUser(int maUser) {
-        this.maUser = maUser;
+    public void setThanhTien(double thanhTien) {
+        this.thanhTien = thanhTien;
     }
 
     public String getTenUser() {
@@ -56,38 +57,6 @@ public class HoaDon {
 
     public void setTenUser(String tenUser) {
         this.tenUser = tenUser;
-    }
-
-    public String getTenKhachHang() {
-        return tenKhachHang;
-    }
-
-    public void setTenKhachHang(String tenKhachHang) {
-        this.tenKhachHang = tenKhachHang;
-    }
-
-    public String getNgayLapHD() {
-        return NgayLapHD;
-    }
-
-    public void setNgayLapHD(String ngayLapHD) {
-        NgayLapHD = ngayLapHD;
-    }
-
-    public int getMaGiohang() {
-        return maGiohang;
-    }
-
-    public void setMaGiohang(int maGiohang) {
-        this.maGiohang = maGiohang;
-    }
-
-    public int getMaSP() {
-        return maSP;
-    }
-
-    public void setMaSP(int maSP) {
-        this.maSP = maSP;
     }
 
     public String getTenSP() {
@@ -122,11 +91,43 @@ public class HoaDon {
         this.donGia = donGia;
     }
 
-    public double getThanhTien() {
-        return thanhTien;
+    public int getMaHoaDon() {
+        return maHoaDon;
     }
 
-    public void setThanhTien(double thanhTien) {
-        this.thanhTien = thanhTien;
+    public void setMaHoaDon(int maHoaDon) {
+        this.maHoaDon = maHoaDon;
+    }
+
+    public int getMaUser() {
+        return maUser;
+    }
+
+    public void setMaUser(int maUser) {
+        this.maUser = maUser;
+    }
+
+    public String getTenKhachHang() {
+        return tenKhachHang;
+    }
+
+    public void setTenKhachHang(String tenKhachHang) {
+        this.tenKhachHang = tenKhachHang;
+    }
+
+    public String getNgayLapHD() {
+        return NgayLapHD;
+    }
+
+    public void setNgayLapHD(String ngayLapHD) {
+        NgayLapHD = ngayLapHD;
+    }
+
+    public int getMaGiohang() {
+        return maGiohang;
+    }
+
+    public void setMaGiohang(int maGiohang) {
+        this.maGiohang = maGiohang;
     }
 }

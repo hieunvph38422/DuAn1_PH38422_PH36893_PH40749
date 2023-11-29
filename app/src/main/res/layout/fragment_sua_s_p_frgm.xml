@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
-    android:orientation="vertical"
-    >
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +25,7 @@
                 android:id="@+id/btnBackSuaSP"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/plus"
+                android:src="@drawable/ic_to_back"
                 android:layout_marginLeft="15dp"
                 />
 
@@ -68,7 +66,7 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Tên Sản Phẩm"
-                    android:textColor="@color/purple_500"
+                    android:textColor="@color/red"
                     android:layout_marginLeft="10dp"
                     />
 
@@ -91,7 +89,7 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Giá Bán"
-                    android:textColor="@color/purple_500"
+                    android:textColor="@color/red"
                     android:layout_marginLeft="10dp"
                     />
 
@@ -116,7 +114,7 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Loại sản phẩm"
-                    android:textColor="@color/purple_500"
+                    android:textColor="@color/red"
                     android:layout_marginLeft="10dp"
                     />
 
@@ -139,7 +137,7 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Mô Tả Sản Phẩm"
-                    android:textColor="@color/purple_500"
+                    android:textColor="@color/red"
                     android:layout_marginLeft="10dp"
                     />
 
@@ -171,8 +169,8 @@
                 android:id="@+id/btnSuaSPHuy"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@color/black"
-                android:backgroundTint="@color/purple_500"
+                android:background="@drawable/bo_tron_edt"
+                android:backgroundTint="@color/red"
                 android:text="Hủy"
                 android:gravity="center"
                 android:textSize="25dp"
@@ -192,8 +190,8 @@
                 android:id="@+id/btnUpdateSp"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@color/black"
-                android:backgroundTint="@color/purple_500"
+                android:background="@drawable/bo_tron_edt"
+                android:backgroundTint="@color/red"
                 android:text="Xác Nhận"
                 android:gravity="center"
                 android:textSize="25dp"
@@ -210,5 +208,9 @@
         </LinearLayout>
 
     </LinearLayout>
+
+
+
+
 
 </ScrollView>

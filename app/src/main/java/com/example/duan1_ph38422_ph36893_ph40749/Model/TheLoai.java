@@ -4,11 +4,12 @@ public class TheLoai {
     private int maLoai;
     private String tenLoai;
 
-    public TheLoai(String strLoai) {
-    }
-
     public TheLoai(int maLoai, String tenLoai) {
         this.maLoai = maLoai;
+        this.tenLoai = tenLoai;
+    }
+
+    public TheLoai(String tenLoai) {
         this.tenLoai = tenLoai;
     }
 

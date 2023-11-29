@@ -9,27 +9,27 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/oranger_button"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <ImageView
             android:id="@+id/itemSpHomeImg"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="10dp"
-            android:src="@drawable/cocktail" />
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/bac_xiu" />
 
         <TextView
             android:id="@+id/itemSpHomeTen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginBottom="10dp"
-            android:text="Cà Phê Nóng"
+            android:fontFamily="@font/ct_font_medium"
+            android:text="Cà Phê Sữa Nóng"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="15dp"
-            android:textStyle="bold" />
+            android:layout_marginTop="2dp"
+            />
 
     </LinearLayout>
 

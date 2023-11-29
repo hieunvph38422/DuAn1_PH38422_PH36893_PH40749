@@ -2,24 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center">
+    android:gravity="center"
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F6EDDA"
+        android:background="@drawable/ct_dialog"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        >
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lọc Sản Phẩm :"
-            android:textSize="21dp"
-            android:textStyle="bold" />
+            style="@style/edt_Label"
+            android:text="Lọc Sản Phẩm"
+            android:padding="0dp"
+            />
 
         <RadioGroup
             android:layout_width="wrap_content"
@@ -32,24 +32,30 @@
                 android:id="@+id/rdoSPAll"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:paddingStart="10dp"
+                android:paddingStart="20dp"
                 android:text="Tất cả"
+                android:textColor="@color/white"
+                android:fontFamily="@font/ct_font_medium"
                 android:textSize="18dp" />
 
             <RadioButton
                 android:id="@+id/rdoSPGia"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:paddingStart="10dp"
+                android:paddingStart="20dp"
                 android:text="Giá"
+                android:textColor="@color/white"
+                android:fontFamily="@font/ct_font_medium"
                 android:textSize="18dp" />
 
             <RadioButton
                 android:id="@+id/rdoSPTL"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:paddingStart="10dp"
+                android:paddingStart="20dp"
                 android:text="Thể loại"
+                android:textColor="@color/white"
+                android:fontFamily="@font/ct_font_medium"
                 android:textSize="18dp" />
         </RadioGroup>
 

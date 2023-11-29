@@ -4,12 +4,12 @@ public class ChucVu {
     int maChucVu;
     String tenChucVu;
 
-    public ChucVu() {
-    }
-
     public ChucVu(int maChucVu, String tenChucVu) {
         this.maChucVu = maChucVu;
         this.tenChucVu = tenChucVu;
+    }
+
+    public ChucVu() {
     }
 
     public int getMaChucVu() {

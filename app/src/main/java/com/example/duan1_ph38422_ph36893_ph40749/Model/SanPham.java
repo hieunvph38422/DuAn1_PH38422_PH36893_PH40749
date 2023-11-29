@@ -2,13 +2,22 @@ package com.example.duan1_ph38422_ph36893_ph40749.Model;
 
 public class SanPham {
     int id;
-    byte[] image;
+    byte [] image;
     String TenSanPham;
     Double Price;
     int MaLoai;
     String Mota;
 
-    public SanPham() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public SanPham(int id) {
+        this.id = id;
     }
 
     public SanPham(int id, byte[] image, String tenSanPham, Double price, int maLoai, String mota) {
@@ -20,12 +29,8 @@ public class SanPham {
         Mota = mota;
     }
 
-    public int getId() {
-        return id;
-    }
+    public SanPham() {
 
-    public void setId(int id) {
-        this.id = id;
     }
 
     public byte[] getImage() {

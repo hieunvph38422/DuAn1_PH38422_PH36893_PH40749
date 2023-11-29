@@ -1,33 +1,27 @@
 package com.example.duan1_ph38422_ph36893_ph40749;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Account_frg;
-import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Home_frg;
-import com.example.duan1_ph38422_ph36893_ph40749.Fragment.Product_frg;
-import com.example.duan1_ph38422_ph36893_ph40749.Fragment.StroreFrgm;
+import com.example.duan1_ph38422_ph36893_ph40749.FragmentManager.Account_Fragment;
+import com.example.duan1_ph38422_ph36893_ph40749.FragmentManager.HomeFrgm;
+import com.example.duan1_ph38422_ph36893_ph40749.FragmentManager.ProductFrgm;
+import com.example.duan1_ph38422_ph36893_ph40749.FragmentManager.StoreFrgm;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     public static BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.pageTrangChu);
@@ -40,20 +34,21 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         showMenu(itemId);
         return true;
     }
+
     private boolean showMenu(int itemId) {
         Fragment fragment = null;
         try {
             if (itemId == R.id.pageTrangChu) {
-                fragment = new Home_frg();
+                fragment = new HomeFrgm();
 
             } else if (itemId == R.id.pageSanPham) {
-                fragment = new Product_frg();
+                fragment = new ProductFrgm();
 
             } else if (itemId == R.id.pageBanHang) {
-                fragment = new StroreFrgm();
+                fragment = new StoreFrgm();
 
             } else if (itemId == R.id.pageTaiKhoan) {
-                fragment = new Account_frg();
+                fragment = new Account_Fragment();
 
             }
             if (fragment != null) {

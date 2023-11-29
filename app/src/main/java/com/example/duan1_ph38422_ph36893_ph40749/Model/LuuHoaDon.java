@@ -17,6 +17,7 @@ public class LuuHoaDon {
     String size;
     double donGia;
     double thanhTien;
+
     public LuuHoaDon(int maLuu, int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia, double thanhTien) {
         this.maLuu = maLuu;
         this.maHoaDon = maHoaDon;
@@ -107,38 +108,6 @@ public class LuuHoaDon {
         this.tenUser = tenUser;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public int getChucVu() {
-        return chucVu;
-    }
-
-    public void setChucVu(int chucVu) {
-        this.chucVu = chucVu;
-    }
-
-    public String getUserSDT() {
-        return userSDT;
-    }
-
-    public void setUserSDT(String userSDT) {
-        this.userSDT = userSDT;
-    }
-
-    public int getUserNamSinh() {
-        return userNamSinh;
-    }
-
-    public void setUserNamSinh(int userNamSinh) {
-        this.userNamSinh = userNamSinh;
-    }
-
     public String getTenKhachHang() {
         return tenKhachHang;
     }
@@ -201,5 +170,37 @@ public class LuuHoaDon {
 
     public void setThanhTien(double thanhTien) {
         this.thanhTien = thanhTien;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(int chucVu) {
+        this.chucVu = chucVu;
+    }
+
+    public String getUserSDT() {
+        return userSDT;
+    }
+
+    public void setUserSDT(String userSDT) {
+        this.userSDT = userSDT;
+    }
+
+    public int getUserNamSinh() {
+        return userNamSinh;
+    }
+
+    public void setUserNamSinh(int userNamSinh) {
+        this.userNamSinh = userNamSinh;
     }
 }
