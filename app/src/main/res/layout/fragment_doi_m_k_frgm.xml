@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5ECD9"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray2"
+        android:background="#00B8D4"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingTop="5dp"
@@ -21,14 +22,14 @@
             android:src="@drawable/ic_to_back" />
 
         <TextView
-            style="@style/edt_Label"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
-            android:fontFamily="@font/ct_font_bold"
             android:text="Đổi Mật Khẩu"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="30dp"
+            android:textStyle="bold"
 
             />
 
@@ -49,34 +50,35 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/edt_Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="Mật Khẩu Cũ"
-                android:textColor="@color/red" />
+                android:textColor="@color/red"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ct_edittext_2"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/edOldPass"
-                    style="@style/edt_TextBox2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập mật khẩu"
-                    android:paddingLeft="30dp"
-                    android:inputType="textPassword" />
+                    android:background="@drawable/custom_edt"
+                    android:inputType="textPassword"
+                    android:paddingLeft="30dp" />
 
                 <ImageView
                     android:id="@+id/img_hidePassword1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="35dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_visibility_off" />
             </RelativeLayout>
 
@@ -89,39 +91,39 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/edt_Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="Mật Khẩu Mới"
-                android:textColor="@color/red" />
+                android:textColor="@color/red"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ct_edittext_2"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/edNewPass"
-                    style="@style/edt_TextBox2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập mật khẩu"
-                    android:paddingLeft="30dp"
-                    android:inputType="textPassword" />
+                    android:background="@drawable/custom_edt"
+                    android:inputType="textPassword"
+                    android:paddingLeft="30dp" />
 
                 <ImageView
                     android:id="@+id/img_hidePassword2"
-                    android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="35dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_visibility_off" />
             </RelativeLayout>
 
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -131,39 +133,39 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/edt_Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="Xác Nhận Mật Khẩu"
-                android:textColor="@color/red" />
+                android:textColor="@color/red"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ct_edittext_2"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/edConfirmPass"
-                    style="@style/edt_TextBox2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nhập mật khẩu"
-                    android:paddingLeft="30dp"
-                    android:inputType="textPassword" />
+                    android:background="@drawable/custom_edt"
+                    android:inputType="textPassword"
+                    android:paddingLeft="30dp" />
 
                 <ImageView
                     android:id="@+id/img_hidePassword3"
-                    android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="35dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/ic_visibility_off" />
             </RelativeLayout>
 
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -178,11 +180,10 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:background="@drawable/bo_tron_edt"
-                android:backgroundTint="@color/red"
+                android:background="#00BFA5"
+                android:backgroundTint="#00BFA5"
                 android:editable="false"
                 android:focusable="false"
-                android:fontFamily="@font/ct_font_medium"
                 android:gravity="center"
                 android:paddingLeft="5dp"
                 android:paddingTop="7dp"
@@ -197,11 +198,10 @@
                 android:id="@+id/btnChange"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bo_tron_edt"
-                android:backgroundTint="@color/red"
+                android:background="#00BFA5"
+                android:backgroundTint="#00BFA5"
                 android:editable="false"
                 android:focusable="false"
-                android:fontFamily="@font/ct_font_medium"
                 android:gravity="center"
                 android:paddingLeft="5dp"
                 android:paddingTop="7dp"

@@ -30,7 +30,7 @@ public class ChiTietSP_Frg extends Fragment {
     SanPham sanPham;
     String sizeCheck;
     TextView txtChiTietTenSp, txtChiTietGiaSP, txtChiTietMoTaSP, txtChiTietTongTien, txtChiTietSL;
-    ImageView img_sp, img_sp1, btnSoLuongTang, btnSoLuongGiam;
+    ImageView img_sp, btnSoLuongTang, btnSoLuongGiam;
     double donGia = 0;
     int soLuong;
     double tongTien;
@@ -49,7 +49,7 @@ public class ChiTietSP_Frg extends Fragment {
         txtChiTietMoTaSP = view.findViewById(R.id.txtChiTietMoTaSP);
         txtChiTietSL = view.findViewById(R.id.txtChiTietSL);
         img_sp = view.findViewById(R.id.imgCTSanPham);
-        img_sp1 = view.findViewById(R.id.imgCTSanPham1);
+
         txtChiTietTongTien = view.findViewById(R.id.txtChiTietTongTien);
         btnSoLuongTang = view.findViewById(R.id.btnSoLuongTang);
         btnSoLuongGiam = view.findViewById(R.id.btnSoLuongGiam);
@@ -158,7 +158,7 @@ public class ChiTietSP_Frg extends Fragment {
         byte[] productsImage = sanPham.getImage();
         Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
         img_sp.setImageBitmap(bitmap);
-        img_sp1.setImageBitmap(bitmap);
+
 
         tongTien = tinhTien(soLuong, donGia, donGiaGoc);
         String mTinhTien = String.format("%,.0f", tongTien);

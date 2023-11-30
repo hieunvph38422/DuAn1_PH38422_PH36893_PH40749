@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5ECD9"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -9,12 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
+
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gray2"
+            android:background="#00B8D4"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingTop="5dp"
@@ -29,10 +31,10 @@
 
             <TextView
                 android:id="@+id/txtSuaNVTittle"
-                style="@style/edt_Label"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"
-                android:fontFamily="@font/ct_font_bold"
+                android:textStyle="bold"
                 android:text="Sửa nhân viên"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -46,7 +48,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/user_avatar" />
+            android:src="@drawable/avata_chicken" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,16 +64,20 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Họ và tên"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edtSuaTenNV"
-                    style="@style/edt_TextBox2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="Họ và tên"
+                    android:background="@drawable/custom_edt"
                     android:textColorHint="@color/black" />
 
                 <LinearLayout
@@ -81,47 +87,61 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/edt_Label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
                         android:text="Mật khẩu"
-                        android:textColor="@color/red" />
+                        android:textColor="@color/red"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/edtSuaMatKhau"
-                        style="@style/edt_TextBox2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:hint="Mật khẩu"
+                        android:background="@drawable/custom_edt"
                         android:textColorHint="@color/black" />
 
                 </LinearLayout>
 
                 <TextView
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:text="Số điện thoại"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edtSuaSDT"
-                    style="@style/edt_TextBox2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="Số điện thoại"
+                    android:background="@drawable/custom_edt"
                     android:inputType="number"
                     android:maxLength="10"
                     android:textColorHint="@color/black" />
 
                 <TextView
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:text="Năm sinh"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edtSuaNamSinh"
-                    style="@style/edt_TextBox2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="Năm sinh"
+                    android:background="@drawable/custom_edt"
                     android:inputType="number"
                     android:maxLength="4"
                     android:textColorHint="@color/black" />
@@ -148,7 +168,6 @@
                 android:backgroundTint="@color/red"
                 android:editable="false"
                 android:focusable="false"
-                android:fontFamily="@font/ct_font_medium"
                 android:gravity="center"
                 android:paddingLeft="5dp"
                 android:paddingTop="7dp"
@@ -167,7 +186,6 @@
                 android:backgroundTint="@color/red"
                 android:editable="false"
                 android:focusable="false"
-                android:fontFamily="@font/ct_font_medium"
                 android:gravity="center"
                 android:paddingLeft="5dp"
                 android:paddingTop="7dp"

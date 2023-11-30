@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5ECD9"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray2"
+        android:background="#00B8D4"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingTop="5dp"
@@ -21,29 +22,27 @@
             android:src="@drawable/ic_to_back" />
 
         <TextView
-            style="@style/edt_Label"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
-            android:fontFamily="@font/ct_font_bold"
             android:text="Thông Tin Nhân Viên"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        >
+        android:layout_marginTop="25dp"
+        android:gravity="center">
 
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/user_avatar"
-            />
+            android:src="@drawable/avata_chicken" />
 
     </LinearLayout>
 
@@ -64,10 +63,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:text="Họ và tên"
                 android:textColor="@color/red"
-                android:fontFamily="@font/ct_font_medium"
-                android:layout_marginLeft="15dp"
                 android:textSize="25dp" />
 
             <LinearLayout
@@ -77,17 +75,19 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_baseline_account_circle_24" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_account" />
 
                 <TextView
                     android:id="@+id/txtViewInfoFullName"
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="AdminName"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -107,10 +107,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:text="Tên đăng nhập"
                 android:textColor="@color/red"
-                android:fontFamily="@font/ct_font_medium"
-                android:layout_marginLeft="15dp"
                 android:textSize="25dp" />
 
             <LinearLayout
@@ -120,17 +119,19 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_baseline_account_circle_24" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_card" />
 
                 <TextView
                     android:id="@+id/txtViewInfoUserName"
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="AdminName"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -149,10 +150,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:text="Chức vụ"
                 android:textColor="@color/red"
-                android:fontFamily="@font/ct_font_medium"
-                android:layout_marginLeft="15dp"
                 android:textSize="25dp" />
 
             <LinearLayout
@@ -162,17 +162,19 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_baseline_account_circle_24" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_chucvu" />
 
                 <TextView
                     android:id="@+id/txtViewInfoChucVu"
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="AdminName"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -190,10 +192,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:text="Số điện thoại"
                 android:textColor="@color/red"
-                android:fontFamily="@font/ct_font_medium"
-                android:layout_marginLeft="15dp"
                 android:textSize="25dp" />
 
             <LinearLayout
@@ -203,17 +204,19 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:src="@drawable/ic_phone" />
 
                 <TextView
                     android:id="@+id/txtViewInfoSDT"
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="0123456789"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -232,10 +235,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:text="Năm sinh"
                 android:textColor="@color/red"
-                android:fontFamily="@font/ct_font_medium"
-                android:layout_marginLeft="15dp"
                 android:textSize="25dp" />
 
             <LinearLayout
@@ -245,17 +247,19 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_calendar" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_namsinh" />
 
                 <TextView
                     android:id="@+id/txtViewInfoNamSinh"
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
                     android:text="2000"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -264,34 +268,31 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
-            >
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/btnViewInfoSua"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
                 android:background="@drawable/bo_tron_edt"
                 android:backgroundTint="@color/red"
-                android:text="Chỉnh Sửa"
-                android:gravity="center"
-                android:textSize="25dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/ct_font_medium"
-                android:textStyle="bold"
-                android:paddingTop="7dp"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
                 android:editable="false"
                 android:focusable="false"
-                android:layout_marginRight="15dp"
-                />
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingTop="7dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:text="Chỉnh Sửa"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/btnViewInfoXoa"
@@ -299,19 +300,17 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bo_tron_edt"
                 android:backgroundTint="@color/red"
-                android:text="Xóa NV"
-                android:gravity="center"
-                android:textSize="25dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/ct_font_medium"
-                android:textStyle="bold"
-                android:paddingTop="7dp"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
                 android:editable="false"
                 android:focusable="false"
-                />
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingTop="7dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:text="Xóa NV"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>

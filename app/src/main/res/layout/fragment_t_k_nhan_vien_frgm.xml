@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5ECD9"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -11,12 +12,13 @@
         android:layout_above="@+id/floatTKDT"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal"
+
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gray2"
+            android:background="#00B8D4"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingTop="5dp"
@@ -30,10 +32,10 @@
                 android:src="@drawable/ic_to_back" />
 
             <TextView
-                style="@style/edt_Label"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:fontFamily="@font/ct_font_bold"
+                android:textStyle="bold"
                 android:text="Thống Kê Nhân Viên"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -55,36 +57,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/edt_Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:fontFamily="@font/ct_font_bold"
                     android:text="STT"
                     android:textColor="@color/red"
-                    android:textSize="23dp" />
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    style="@style/edt_Label"
-                    android:layout_marginLeft="10dp"
                     android:layout_width="250dp"
-                    android:fontFamily="@font/ct_font_bold"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="Tên Nhân Viên"
                     android:textColor="@color/red"
-                    android:textSize="23dp" />
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    style="@style/edt_Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:fontFamily="@font/ct_font_bold"
                     android:text="D.Số"
                     android:textAlignment="center"
                     android:textColor="@color/red"
-                    android:textSize="23dp" />
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_TKNV"
-                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -94,37 +97,34 @@
 
     <LinearLayout
         android:id="@+id/floatTKDT"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#00B8D4"
         android:orientation="horizontal"
         android:paddingTop="3dp"
-        android:paddingBottom="5dp"
-        android:background="@color/gray2"
-        >
+        android:paddingBottom="5dp">
 
         <TextView
-            style="@style/edt_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="Số nhân viên: "
             android:textColor="@color/black"
             android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtTKNVSoLg"
-            style="@style/edt_Label"
-            android:layout_width="match_parent"
-            android:textAlignment="textEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:paddingRight="20dp"
             android:text="00"
+            android:textAlignment="textEnd"
             android:textColor="@color/red"
             android:textSize="25dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
     </LinearLayout>
-
 
 
 </RelativeLayout>

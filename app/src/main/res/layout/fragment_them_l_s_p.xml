@@ -2,36 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5ECD9"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="#00B8D4"
         android:gravity="center_vertical"
-        android:background="@color/gray2"
+        android:orientation="horizontal"
         android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        >
+        android:paddingBottom="5dp">
 
         <ImageView
             android:id="@+id/btnBackLSP"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_to_back"
             android:layout_marginLeft="15dp"
-            />
+            android:src="@drawable/ic_to_back" />
 
         <TextView
-            style="@style/edt_Label"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            android:text="Thêm Loại Sản Phẩm"
-            android:textSize="25dp"
-            android:fontFamily="@font/ct_font_bold"
+            android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:text="Thêm Loại Sản Phẩm"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
 
             />
 
@@ -40,28 +39,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="20dp"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
-                style="@style/edt_Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="Tên Loại"
                 android:textColor="@color/red"
-                android:layout_marginLeft="10dp"
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/edtAddSPLoai"
-                style="@style/edt_TextBox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="Tên Loại"
+                android:background="@drawable/custom_edt"
                 android:textColorHint="@color/black" />
 
         </LinearLayout>
@@ -72,33 +72,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
-        >
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/btnLSPHuy"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
             android:background="@drawable/bo_tron_edt"
             android:backgroundTint="@color/red"
-            android:text="Hủy"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/ct_font_medium"
-            android:textStyle="bold"
-            android:paddingTop="7dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
             android:editable="false"
             android:focusable="false"
-            android:layout_marginRight="15dp"
-            />
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingTop="7dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="Hủy"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/btnLSPXN"
@@ -106,21 +103,18 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bo_tron_edt"
             android:backgroundTint="@color/red"
-            android:text="Xác Nhận"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/ct_font_medium"
-            android:textStyle="bold"
-            android:paddingTop="7dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
             android:editable="false"
             android:focusable="false"
-            />
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingTop="7dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:text="Xác Nhận"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
     </LinearLayout>
-
 
 
 </LinearLayout>

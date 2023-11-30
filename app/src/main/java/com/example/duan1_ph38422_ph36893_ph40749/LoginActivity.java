@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,7 +25,8 @@ import java.util.ArrayList;
 public class LoginActivity extends AppCompatActivity {
     private User_Dao userDAO;
     EditText edtUser, edtPassword;
-    ImageView btnLogin, img_hidePassword;
+    ImageView img_hidePassword;
+    Button btnLogin;
     CheckBox checkBox;
 
     @Override
