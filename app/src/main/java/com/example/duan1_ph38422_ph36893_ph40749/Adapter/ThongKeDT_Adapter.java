@@ -1,5 +1,7 @@
 package com.example.duan1_ph38422_ph36893_ph40749.Adapter;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -71,7 +74,13 @@ public class ThongKeDT_Adapter extends RecyclerView.Adapter<ThongKeDT_Adapter.Vi
 
                 TextView txtHDTenNV = dialog.findViewById(R.id.txtHDTenNV);
                 TextView txtHDTenKH = dialog.findViewById(R.id.txtHDTenKH);
+
+                TextView txtHDDiaChi = dialog.findViewById(R.id.txtHDDiaChi);
+
                 TextView txtHDNgayBan = dialog.findViewById(R.id.txtHDNgayBan);
+
+                TextView txtHDTrangThai = dialog.findViewById(R.id.txtHDTrangThai);
+
                 RecyclerView recycle_hoaDon = dialog.findViewById(R.id.recycle_hoaDon);
                 TextView txtHDTongTien = dialog.findViewById(R.id.txtHDTongTien);
 
@@ -80,7 +89,55 @@ public class ThongKeDT_Adapter extends RecyclerView.Adapter<ThongKeDT_Adapter.Vi
                 txtHoaDonTitle.setText("Chi tiết hóa đơn");
                 txtHDTenNV.setText(listHoaDon2.get(0).getTenUser());
                 txtHDTenKH.setText(listHoaDon2.get(0).getTenKhachHang());
+
                 txtHDNgayBan.setText(listHoaDon2.get(0).getNgayLapHD());
+                txtHDDiaChi.setText(listHoaDon2.get(0).getDiaChi());
+
+                notifyDataSetChanged();
+
+
+                txtHDTrangThai.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Dialog dialog1 = new Dialog(v.getContext());
+                        dialog1.setContentView(R.layout.dialog_update_trangthai);
+                        dialog1.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                        dialog1.show();
+
+                        EditText btnUpdateTT = dialog1.findViewById(R.id.btnUpdateTrangThai);
+                        EditText btnHuyTT = dialog1.findViewById(R.id.btnHuyTrangThai);
+                        EditText edtUpdateTrangThai = dialog1.findViewById(R.id.edtUpdateTrangThai);
+
+                        btnHuyTT.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog1.dismiss();
+                            }
+                        });
+                        btnUpdateTT.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String trangthai = edtUpdateTrangThai.getText().toString();
+                                hoaDon.setTrangThai(trangthai);
+
+                                boolean isSuccess = luuHDDAO.updateTrangThai(hoaDon);
+                                if (isSuccess) {
+                                    listHoaDon2.clear();
+                                    listHoaDon2.addAll(luuHDDAO.getHDofMaHD(hoaDon.getMaHoaDon()));
+                                    txtHDTrangThai.setText(listHoaDon2.get(0).getTrangThai());
+                                    notifyDataSetChanged();
+                                    Toast.makeText(context, "Cập nhật trạng thái thành công", Toast.LENGTH_SHORT).show();
+                                    dialog1.dismiss();
+                                } else {
+                                    Toast.makeText(context, "Cập nhật trạng thái thất bại", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
+
+                    }
+                });
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(dialog.getContext());
                 recycle_hoaDon.setLayoutManager(linearLayoutManager);
@@ -104,6 +161,11 @@ public class ThongKeDT_Adapter extends RecyclerView.Adapter<ThongKeDT_Adapter.Vi
                 dialog.show();
             }
         });
+    }
+
+    public void reloadData() {
+        // Load lại dữ liệu, có thể thông qua việc gọi notifyDataSetChanged() hoặc một phương thức tương tự.
+        notifyDataSetChanged();
     }
 
     @Override

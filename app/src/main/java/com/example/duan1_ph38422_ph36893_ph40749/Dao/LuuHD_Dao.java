@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 
 import com.example.duan1_ph38422_ph36893_ph40749.Database.DbHelper;
+import com.example.duan1_ph38422_ph36893_ph40749.Model.HoaDon;
 import com.example.duan1_ph38422_ph36893_ph40749.Model.LuuHoaDon;
 
 import java.util.ArrayList;
@@ -36,7 +37,10 @@ public class LuuHD_Dao {
         values.put("soLuong", luuHoaDon.getSoLuong());
         values.put("size", luuHoaDon.getSize());
         values.put("donGia", luuHoaDon.getDonGia());
+        values.put("trangThai", luuHoaDon.getTrangThai());
+        values.put("diaChi", luuHoaDon.getDiaChi());
         values.put("thanhTien", luuHoaDon.getThanhTien());
+
         long check = database.insert("LuuHoaDon", null, values);
         if (check == -1){
             return false;
@@ -162,7 +166,7 @@ public class LuuHD_Dao {
 //    Lấy hóa đơn theo mã hóa đơn
     public ArrayList<LuuHoaDon> getHDofMaHD(int maHD){
         ArrayList<LuuHoaDon> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT LuuHoaDon.maluu, LuuHoaDon.mahoadon, LuuHoaDon.tenuser, LuuHoaDon.tenkhachhang, LuuHoaDon.ngaylaphd, LuuHoaDon.tensp, LuuHoaDon.soluong, LuuHoaDon.size, LuuHoaDon.dongia from LuuHoaDon WHERE LuuHoaDon.mahoadon = ?", new String[]{String.valueOf(maHD)});
+        Cursor cursor = database.rawQuery("SELECT LuuHoaDon.maluu, LuuHoaDon.mahoadon, LuuHoaDon.tenuser, LuuHoaDon.tenkhachhang, LuuHoaDon.ngaylaphd, LuuHoaDon.tensp, LuuHoaDon.soluong, LuuHoaDon.size, LuuHoaDon.dongia, LuuHoaDon.trangthai, LuuHoaDon.diachi from LuuHoaDon WHERE LuuHoaDon.mahoadon = ?", new String[]{String.valueOf(maHD)});
         if (cursor.getCount() != 0){
             cursor.moveToFirst();
             do {
@@ -175,7 +179,9 @@ public class LuuHD_Dao {
                 int soLuong = cursor.getInt(6);
                 String size = cursor.getString(7);
                 double donGia = cursor.getDouble(8);
-                list.add(new LuuHoaDon(maLuu, maHoaDon, tenNv, tenKH, ngayBan, tenSP, soLuong, size, donGia));
+                String trangThai = cursor.getString(9);
+                String diaChi = cursor.getString(10);
+                list.add(new LuuHoaDon(maLuu, maHoaDon, tenNv, tenKH, ngayBan, tenSP, soLuong, size, donGia, trangThai, diaChi));
             }   while (cursor.moveToNext());
         }
         return list;
@@ -205,4 +211,14 @@ public class LuuHD_Dao {
         }
         return listMaSP;
     }
+
+    public boolean updateTrangThai(LuuHoaDon luuHoaDon) {
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("trangThai", luuHoaDon.getTrangThai());
+        long check = sqLiteDatabase.update("LuuHoaDon", values, "maLuu = ?", new String[]{String.valueOf(luuHoaDon.getMaLuu())});
+        return check > 0;
+    }
+
+
 }

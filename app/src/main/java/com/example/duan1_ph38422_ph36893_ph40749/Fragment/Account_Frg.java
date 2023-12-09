@@ -52,15 +52,18 @@ public class Account_Frg extends Fragment {
         User user = userDAO.getUser(maUser);
         int quyenUser = user.getMaChucVu();
 
+        txtChucVu.setText("ADMIN");
+        txtUserName.setText(user.getFullName());
+
         if (quyenUser == 2) {
             userFrgmThemNhanVien.setVisibility(View.GONE);
             userFrgmTKNhanVien.setVisibility(View.GONE);
             userFrgmThemSP.setVisibility(View.GONE);
             userFrgmThemLSP.setVisibility(View.GONE);
+            txtChucVu.setText("Khách hàng");
         }
 
-        txtUserName.setText(user.getFullName());
-        txtChucVu.setText(user.getTenChucVu());
+
 
         userFrgmTaiKhoan.setOnClickListener(new View.OnClickListener() {
             @Override

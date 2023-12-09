@@ -14,14 +14,34 @@ public class HoaDon {
     double donGia;
     double thanhTien;
 
-    public HoaDon(int maUser, String tenKhachHang, String ngayLapHD, int maGiohang) {
+    String trangThai;
+    String diaChi;
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
+    public HoaDon(int maUser, String tenKhachHang, String ngayLapHD, int maGiohang, String diaChi) {
         this.maUser = maUser;
         this.tenKhachHang = tenKhachHang;
         NgayLapHD = ngayLapHD;
         this.maGiohang = maGiohang;
+        this.diaChi = diaChi;
     }
 
-    public HoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia, double thanhTien) {
+    public HoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia,  String trangThai, String diaChi, double thanhTien) {
         this.maHoaDon = maHoaDon;
         this.maUser = maUser;
         this.tenUser = tenUser;
@@ -32,6 +52,8 @@ public class HoaDon {
         this.soLuong = soLuong;
         this.size = size;
         this.donGia = donGia;
+        this.trangThai = trangThai;
+        this.diaChi = diaChi;
         this.thanhTien = thanhTien;
     }
 

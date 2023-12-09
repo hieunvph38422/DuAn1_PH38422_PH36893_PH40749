@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/avata_chicken" />
 
     <TextView
@@ -175,7 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
-                    android:text="Thống Kê Nhân Viên"
+                    android:text="Thống Kê Khách hàng"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -286,7 +286,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:paddingBottom="3dp"
-                    android:text="Thêm Nhân Viên"
+                    android:text="Thêm khách hàng"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -299,6 +299,9 @@
                 android:layout_marginTop="2dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
+
+
+
 
         <LinearLayout
             android:id="@+id/userFrgmDangXuat"

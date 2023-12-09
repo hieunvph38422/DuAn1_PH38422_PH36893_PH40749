@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginLeft="40dp"
-                android:text="Nhân viên"
+                android:text="Khách hàng"
                 android:textColor="@color/red"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -87,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="Tên nhân viên"
+                    android:text="Tài khoản khách hàng"
                     android:textColor="@color/red"
                     android:textSize="18sp"
                     android:textStyle="bold" />

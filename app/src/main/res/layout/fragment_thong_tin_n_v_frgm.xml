@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"
                 android:textStyle="bold"
-                android:text="Thông tin nhân viên"
+                android:text="Thông tin khách hàng"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25dp"

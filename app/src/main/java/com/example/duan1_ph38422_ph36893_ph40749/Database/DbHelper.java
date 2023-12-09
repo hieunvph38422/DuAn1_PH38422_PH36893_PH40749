@@ -9,7 +9,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     private static final String DATABASE_NAME = "ChickenCoffee.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     public DbHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -65,7 +65,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MaUser INTEGER REFERENCES User(MaUser),\n" +
                 "TenKhachHang TEXT,\n" +
                 "NgayLapHD TEXT,\n" +
-                "MaGioHang INTEGER\n" +
+                "MaGioHang INTEGER,\n" +
+                "TrangThai TEXT\n," +
+                "DiaChi TEXT\n" +
                 ");";
         db.execSQL(tableHoaDon);
 
@@ -84,6 +86,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "maLuu INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
                 "maHoaDon INTEGER REFERENCES HoaDon(MaHoaDon),\n" +
                 "maUser INTEGER REFERENCES User(MaUser),\n" +
+                "trangThai TEXT REFERENCES HoaDon(TrangThai),\n" +
                 "tenUser TEXT,\n" +
                 "tenKhachHang TEXT,\n" +
                 "NgayLapHD TEXT,\n" +
@@ -92,7 +95,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 "soLuong INTEGER,\n" +
                 "size TEXT,\n" +
                 "donGia DOUBLE\n," +
-                "thanhTien DOUBLE\n" +
+                "thanhTien DOUBLE\n," +
+                "diaChi TEXT\n" +
                 ");";
         db.execSQL(tableLuuHoaDon);
     }

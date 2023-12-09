@@ -30,6 +30,9 @@ public class HoaDon_Dao {
         values.put("TenKhachHang", hoaDon.getTenKhachHang());
         values.put("NgayLapHD", hoaDon.getNgayLapHD());
         values.put("MaGioHang", hoaDon.getMaGiohang());
+        values.put("TrangThai", hoaDon.getTrangThai());
+        values.put("DiaChi", hoaDon.getDiaChi());
+
         long check = database.insert("HoaDon", null, values);
         if (check == -1){
             return false;
@@ -52,6 +55,8 @@ public class HoaDon_Dao {
                 "GioHang.soluong, " +
                 "GioHang.size, " +
                 "GioHang.dongia, " +
+                "HoaDon.trangthai, " +
+                "HoaDon.diachi, " +
                 "(GioHang.soluong * GioHang.dongia) as ThanhTien FROM HoaDon, GioHang, SanPham, User WHERE HoaDon.magiohang = GioHang.MaGioHang and GioHang.masanpham = SanPham.MaSanPham and HoaDon.mauser = User.MaUser", null);
         if (cursor.getCount() != 0){
             cursor.moveToFirst();
@@ -66,8 +71,11 @@ public class HoaDon_Dao {
                 int soLuong = cursor.getInt(7);
                 String size = cursor.getString(8);
                 double donGia = cursor.getDouble(9);
-                double thanhTien = cursor.getDouble(10);
-                list.add(new HoaDon(maHoaDon, maUser, userName, tenKH, ngayLapHD,maSP, tenSP, soLuong, size, donGia, thanhTien));
+                String trangthai = cursor.getString(10);
+                String diaChi = cursor.getString(11);
+                double thanhTien = cursor.getDouble(12);
+
+                list.add(new HoaDon(maHoaDon, maUser, userName, tenKH, ngayLapHD,maSP, tenSP, soLuong, size, donGia, trangthai, diaChi, thanhTien));
             }   while (cursor.moveToNext());
         }
         return list;
@@ -77,4 +85,5 @@ public class HoaDon_Dao {
     public  void deleteHoaDon(HoaDon hoaDon){
         database.delete("HoaDon","MaHoaDon = ?", new String[]{String.valueOf(hoaDon.getMaHoaDon())});
     }
+
 }

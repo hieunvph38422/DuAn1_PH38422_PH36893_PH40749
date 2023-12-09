@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"
                 android:textStyle="bold"
-                android:text="Sửa nhân viên"
+                android:text="Sửa khách hàng"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="30dp"

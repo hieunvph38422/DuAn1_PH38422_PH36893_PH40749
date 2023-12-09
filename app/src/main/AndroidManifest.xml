@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/logochickenapp"
-        android:label="@string/app_name"
+        android:label="Chicken Coffee"
         android:roundIcon="@mipmap/logochickenapp"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuAn1_PH38422_PH36893_PH40749"

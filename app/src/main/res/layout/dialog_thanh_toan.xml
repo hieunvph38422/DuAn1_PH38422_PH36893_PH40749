@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:text="Nhân viên:"
+                android:text="Người bán:"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
 
@@ -81,6 +81,29 @@
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
+                android:text="Địa chỉ:"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txtHDDiaChi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trịnh văn bô"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
                 android:text="Ngày bán:"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
@@ -90,6 +113,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="13/09/2004"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái:"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txtHDTrangThai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chưa giao hàng"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -182,6 +228,8 @@
                 android:textSize="26dp"
                 android:textStyle="bold" />
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"

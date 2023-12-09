@@ -103,7 +103,7 @@ public class ViewUserInfor_Frg extends Fragment {
 //                        Gọi DAO xóa nhân viên
                         boolean kiemtra = userDAO.deleteUser(user.getID_User());
                         if (kiemtra){
-                            Toast.makeText(getContext(), "Đã xóa nhân viên!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Đã xóa khách hàng!", Toast.LENGTH_SHORT).show();
                             loadFragment(new ThongKeNV_Frg());
                         }
                         dialog.dismiss();

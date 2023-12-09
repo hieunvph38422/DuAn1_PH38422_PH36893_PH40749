@@ -18,6 +18,25 @@ public class LuuHoaDon {
     double donGia;
     double thanhTien;
 
+    String trangThai;
+    String diaChi;
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
     public LuuHoaDon(int maLuu, int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia, double thanhTien) {
         this.maLuu = maLuu;
         this.maHoaDon = maHoaDon;
@@ -40,7 +59,7 @@ public class LuuHoaDon {
         this.thanhTien = thanhTien;
     }
 
-    public LuuHoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia, double thanhTien) {
+    public LuuHoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia, String trangThai, String diaChi, double thanhTien) {
         this.maHoaDon = maHoaDon;
         this.maUser = maUser;
         this.tenUser = tenUser;
@@ -51,6 +70,8 @@ public class LuuHoaDon {
         this.soLuong = soLuong;
         this.size = size;
         this.donGia = donGia;
+        this.trangThai = trangThai;
+        this.diaChi = diaChi;
         this.thanhTien = thanhTien;
     }
 
@@ -64,7 +85,7 @@ public class LuuHoaDon {
         this.thanhTien = thanhTien;
     }
 
-    public LuuHoaDon(int maLuu, int maHoaDon, String tenUser, String tenKhachHang, String ngayLapHD, String tenSP, int soLuong, String size, double donGia) {
+    public LuuHoaDon(int maLuu, int maHoaDon, String tenUser, String tenKhachHang, String ngayLapHD, String tenSP, int soLuong, String size, double donGia, String trangThai, String diaChi) {
         this.maLuu = maLuu;
         this.maHoaDon = maHoaDon;
         this.tenUser = tenUser;
@@ -74,7 +95,10 @@ public class LuuHoaDon {
         this.soLuong = soLuong;
         this.size = size;
         this.donGia = donGia;
+        this.trangThai = trangThai;
+        this.diaChi = diaChi;
     }
+
 
     public int getMaLuu() {
         return maLuu;
