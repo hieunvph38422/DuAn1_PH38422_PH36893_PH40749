@@ -92,9 +92,7 @@ public class ThongKeDT_Adapter extends RecyclerView.Adapter<ThongKeDT_Adapter.Vi
 
                 txtHDNgayBan.setText(listHoaDon2.get(0).getNgayLapHD());
                 txtHDDiaChi.setText(listHoaDon2.get(0).getDiaChi());
-
-                notifyDataSetChanged();
-
+                txtHDTrangThai.setText(listHoaDon2.get(0).getTrangThai());
 
                 txtHDTrangThai.setOnClickListener(new View.OnClickListener() {
                     @Override
